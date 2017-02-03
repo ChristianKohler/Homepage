@@ -20,8 +20,7 @@ module.exports = {
 	},
 	output: {
 		path: out,
-		filename: '[name].[hash].js',
-		publicPath: '/'
+		filename: '[name].[hash].js'
 	},
 	module: {
 		rules: [{
