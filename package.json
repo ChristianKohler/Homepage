@@ -6,7 +6,7 @@
   "author": "Christian Kohler",
   "scripts": {
     "build": "cross-env NODE_ENV=production webpack --config config/webpack",
-    "start": "serve docs -s",
+    "start": "serve dist -s",
     "watch": "webpack-dashboard -- webpack-dev-server --config config/webpack"
   },
   "dependencies": {

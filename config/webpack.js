@@ -3,7 +3,7 @@ const ExtractText = require('extract-text-webpack-plugin');
 const { isProd, plugins } = require('./setup');
 const babel = require('./babel');
 
-const out = join(__dirname, '../docs');
+const out = join(__dirname, '../dist');
 const exclude = /(node_modules|bower_components)/;
 
 if (isProd) {
@@ -20,7 +20,8 @@ module.exports = {
 	},
 	output: {
 		path: out,
-		filename: '[name].[hash].js'
+		filename: '[name].[hash].js',
+		publicPath: '/'
 	},
 	module: {
 		rules: [{
