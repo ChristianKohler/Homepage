@@ -15,7 +15,7 @@ const isProd = (env === 'production');
 
 // base plugins array
 const plugins = [
-	new Clean(['dist'], {root: root}),
+	new Clean(['docs'], {root: root}),
 	new Copy([{context: 'src/static/', from: '**/*.*'}]),
 	new webpack.optimize.CommonsChunkPlugin({name: 'vendor'}),
 	new webpack.DefinePlugin({'process.env.NODE_ENV': JSON.stringify(env)}),

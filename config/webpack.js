@@ -3,7 +3,7 @@ const ExtractText = require('extract-text-webpack-plugin');
 const { isProd, plugins } = require('./setup');
 const babel = require('./babel');
 
-const out = join(__dirname, '../dist');
+const out = join(__dirname, '../docs');
 const exclude = /(node_modules|bower_components)/;
 
 if (isProd) {
