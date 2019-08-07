@@ -1,14 +1,8 @@
-import React from 'react';
-import { Link } from 'gatsby';
-import styled from '@emotion/styled';
-import Headroom from 'react-headroom';
-import logo from '../../static/logo/header-logo.png';
-
-const StyledLink = styled(Link)`
-  display: flex;
-  font-weight: 700;
-  align-items: center;
-`;
+import React from "react";
+import { Link } from "gatsby";
+import styled from "@emotion/styled";
+import Headroom from "react-headroom";
+import { Container } from "../layouts";
 
 const Nav = styled.nav`
   display: flex;
@@ -22,21 +16,20 @@ const Nav = styled.nav`
     margin-left: 2rem;
     transition: all ${props => props.theme.transitions.default.duration};
     &:hover {
-      color: ${props => props.theme.colors.white.grey};
+      color: ${props => props.theme.colors.white.light};
     }
   }
 `;
 
 const NavBar = () => (
   <Headroom calcHeightOnResize disableInlineStyles>
-    <StyledLink to="/">
-      <img src={logo} alt="Gatsby Logo" />
-    </StyledLink>
-    <Nav>
-      <Link to="/">Home</Link>
-      <Link to="/blog">Blog</Link>
-      <Link to="/about">About</Link>
-    </Nav>
+    <Container type={"base"}>
+      <Nav>
+        <Link to="/">Home</Link>
+        <Link to="/blog">Blog</Link>
+        <Link to="/about">About</Link>
+      </Nav>
+    </Container>
   </Headroom>
 );
 

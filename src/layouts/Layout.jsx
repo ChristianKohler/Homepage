@@ -1,13 +1,17 @@
-import React, { Fragment } from 'react';
-import { ThemeProvider } from 'emotion-theming';
-import { css, Global } from '@emotion/core';
-import PropTypes from 'prop-types';
-import 'typeface-open-sans';
-import 'typeface-candal';
-import { SEO } from 'components';
-import { NavBar, Footer } from 'layouts';
-import theme from '../../config/theme';
-import headroom from '../styles/headroom';
+import React, { Fragment } from "react";
+import { ThemeProvider } from "emotion-theming";
+import { css, Global } from "@emotion/core";
+import styled from '@emotion/styled';
+import PropTypes from "prop-types";
+import "typeface-open-sans";
+import "typeface-candal";
+import { SEO } from "components";
+import { NavBar, Footer } from "layouts";
+import theme from "../../config/theme";
+import headroom from "../styles/headroom";
+import { nasaBackgroundSVG } from "../styles/nasaBackground";
+
+const gradient = `linear-gradient(to bottom,  ${theme.colors.background.dark} 0%, ${theme.colors.background.light} 100%)`;
 
 const Layout = ({ children }) => (
   <ThemeProvider theme={theme}>
@@ -40,6 +44,9 @@ const Layout = ({ children }) => (
             display: flex;
             flex-direction: column;
             min-height: 100vh;
+            background: ${theme.colors.background.dark};
+            background-image: ${nasaBackgroundSVG}, ${gradient};
+            background-attachment: fixed;
           }
           a {
             color: ${theme.colors.link};
@@ -52,6 +59,8 @@ const Layout = ({ children }) => (
           }
           h1 {
             font-family: ${theme.fontFamily.heading};
+            font-size: 4rem;
+            font-weight: 700;
           }
 
           ${headroom}
@@ -68,5 +77,5 @@ const Layout = ({ children }) => (
 export default Layout;
 
 Layout.propTypes = {
-  children: PropTypes.oneOfType([PropTypes.array, PropTypes.node]).isRequired,
+  children: PropTypes.oneOfType([PropTypes.array, PropTypes.node]).isRequired
 };

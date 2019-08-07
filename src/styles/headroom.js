@@ -17,7 +17,7 @@ const headroom = css`
     svg {
       height: 2.5rem;
       g {
-        fill: ${theme.colors.white.base};
+        fill: ${theme.colors.black.base};
       }
     }
   }

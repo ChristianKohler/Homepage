@@ -1,43 +1,43 @@
-import React from 'react';
-import { graphql } from 'gatsby';
-import PropTypes from 'prop-types';
-import Helmet from 'react-helmet';
-import styled from '@emotion/styled';
-import { Header, PostList } from 'components';
-import { Layout } from 'layouts';
+import React from "react";
+import { graphql } from "gatsby";
+import PropTypes from "prop-types";
+import Helmet from "react-helmet";
+import styled from "@emotion/styled";
+import { MainHeader, PostList } from "components";
+import { Layout, Container } from "layouts";
 
 const PostWrapper = styled.div`
   display: flex;
   flex-direction: row;
   flex-wrap: wrap;
   justify-content: space-between;
-  margin: 4rem 4rem 1rem 4rem;
-  @media (max-width: 1000px) {
-    margin: 4rem 2rem 1rem 2rem;
-  }
-  @media (max-width: 700px) {
-    margin: 4rem 1rem 1rem 1rem;
-  }
+  margin: 4rem 0;
 `;
 
 const Index = ({ data }) => {
   const { edges } = data.allMarkdownRemark;
   return (
     <Layout>
-      <Helmet title={'Home Page'} />
-      <Header title="Home Page">Gatsby Tutorial Starter</Header>
-      <PostWrapper>
-        {edges.map(({ node }) => (
-          <PostList
-            key={node.id}
-            cover={node.frontmatter.cover.childImageSharp.fluid}
-            path={node.frontmatter.path}
-            title={node.frontmatter.title}
-            date={node.frontmatter.date}
-            excerpt={node.excerpt}
-          />
-        ))}
-      </PostWrapper>
+      <Helmet title={"Christian Kohler"} />
+      <Container type={"base"}>
+        <MainHeader title="Chris Kohler">
+          Lorem ipsum dolor sit amet consectetur adipisicing elit. Maiores
+          tenetur totam corrupti explicabo molestiae, vero dolores fuga
+          inventore!
+        </MainHeader>
+        <PostWrapper>
+          {edges.map(({ node }) => (
+            <PostList
+              key={node.id}
+              cover={node.frontmatter.cover.childImageSharp.fluid}
+              path={node.frontmatter.path}
+              title={node.frontmatter.title}
+              date={node.frontmatter.date}
+              excerpt={node.excerpt}
+            />
+          ))}
+        </PostWrapper>
+      </Container>
     </Layout>
   );
 };
@@ -56,13 +56,13 @@ Index.propTypes = {
               path: PropTypes.string.isRequired,
               title: PropTypes.string.isRequired,
               date: PropTypes.string.isRequired,
-              tags: PropTypes.array,
-            }),
-          }),
+              tags: PropTypes.array
+            })
+          })
         }).isRequired
-      ),
-    }),
-  }),
+      )
+    })
+  })
 };
 
 export const query = graphql`

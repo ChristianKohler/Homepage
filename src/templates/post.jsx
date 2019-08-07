@@ -36,7 +36,7 @@ const Post = ({ data, pageContext }) => {
         article
       />
       <Header title={title} date={date} cover={image} />
-      <Container>
+      <Container type={"article"}>
         <Content input={html} />
         <TagsBlock list={post.frontmatter.tags || []} />
       </Container>
