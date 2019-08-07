@@ -59,7 +59,7 @@ const Layout = ({ children }) => (
           }
           h1 {
             font-family: ${theme.fontFamily.heading};
-            font-size: 4rem;
+            font-size: 3rem;
             font-weight: 700;
           }
 

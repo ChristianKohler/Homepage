@@ -20,7 +20,7 @@ const Index = ({ data }) => {
     <Layout>
       <Helmet title={"Christian Kohler"} />
       <Container type={"base"}>
-        <MainHeader title="Chris Kohler">
+        <MainHeader title="Hi, I'am Chris Kohler">
           Lorem ipsum dolor sit amet consectetur adipisicing elit. Maiores
           tenetur totam corrupti explicabo molestiae, vero dolores fuga
           inventore!

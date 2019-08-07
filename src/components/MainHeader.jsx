@@ -8,7 +8,9 @@ const Wrapper = styled.header`
   margin: 10rem 0;
 `;
 
-const Title = styled.h1``;
+const Title = styled.h1`
+    /* text-transform: uppercase; */
+`;
 
 const Subtitle = styled.p`
   max-width: 550px;
