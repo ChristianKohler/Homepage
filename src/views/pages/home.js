@@ -7,7 +7,7 @@ export default function (props) {
 		<div className="page page__home">
 			<Card>
 				<h1>Home</h1>
-				<p>This is the home page.</p>
+				<p>This is the home page. Yes.</p>
 			</Card>
 		</div>
 	);
