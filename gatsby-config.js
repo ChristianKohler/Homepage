@@ -3,7 +3,7 @@ module.exports = {
     title: `Chris Kohler`,
     name: `Chris Kohler`,
     siteUrl: `https://christiankohler.net`,
-    description: `Chris Kohlers`,
+    description: `Chris Kohler`,
     hero: {
       heading: `<b>Hi, I am Chris</b>, I live in Zurich, Switzerland. I am a software engineer with a <b>passion for JavaScript</b> and Web Technologies.`,
       maxWidth: 652,
