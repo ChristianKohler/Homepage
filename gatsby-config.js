@@ -3,7 +3,7 @@ module.exports = {
     title: `Chris Kohler`,
     name: `Chris Kohler`,
     siteUrl: `https://christiankohler.net`,
-    description: `This is my description that will be used in the meta tags and important for search results`,
+    description: `Chris Kohlers`,
     hero: {
       heading: `<b>Hi, I am Chris</b>, I live in Zurich, Switzerland. I am a software engineer with a <b>passion for JavaScript</b> and Web Technologies.`,
       maxWidth: 652,
@@ -44,8 +44,8 @@ module.exports = {
     {
       resolve: `gatsby-plugin-manifest`,
       options: {
-        name: `Novela by Narative`,
-        short_name: `Novela`,
+        name: `Chris Kohler`,
+        short_name: `Chris Kohler`,
         start_url: `/`,
         background_color: `#fff`,
         theme_color: `#fff`,
