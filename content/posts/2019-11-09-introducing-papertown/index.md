@@ -4,7 +4,7 @@ author: Chris Kohler
 date: "2019-11-09"
 hero: "./images/hero.png"
 cover_image: "https://thepracticaldev.s3.amazonaws.com/i/r6y5v0tlsem4m01ydg1z.png"
-published: false
+published: true
 canonical_url: "https://christiankohler.net/introducing-papertown"
 masterid: 20191109
 excerpt: Dead simple blog syndication for everyone
@@ -102,4 +102,4 @@ Source is MIT and on Github: https://github.com/ChristianKohler/papertown
 
 # What's next? 👀
 
-Over the next weeks I will focus on the dev.to integration and fixing bugs. After that I will start to work on the medium integration. If you would like to help please open an issue or pr on Github. I appreciate all contributions.
+Over the next weeks I will focus on the dev.to integration and fixing bugs. The highest prioritiy currently is adding support for images. After that I will start to work on the medium integration. If you would like to help please open an issue or pr on Github. All contributions are appreciated.
