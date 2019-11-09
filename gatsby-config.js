@@ -1,65 +1,57 @@
-const config = require('./config/site');
-
 module.exports = {
   siteMetadata: {
-    ...config,
+    title: `Chris Kohler`,
+    name: `Chris Kohler`,
+    siteUrl: `https://christiankohler.net`,
+    description: `This is my description that will be used in the meta tags and important for search results`,
+    hero: {
+      heading: `<b>Hi, I am Chris</b>, I live in Zurich, Switzerland. I am a software engineer with a <b>passion for JavaScript</b> and Web Technologies.`,
+      maxWidth: 652,
+    },
+    social: [
+      {
+        name: `twitter`,
+        url: `https://twitter.com/kohlerchristian`,
+      },
+      {
+        name: `github`,
+        url: `https://github.com/christiankohler`,
+      },
+      {
+        name: `instagram`,
+        url: `https://instagram.com/mrchriskohler`,
+      },
+      {
+        name: `linkedin`,
+        url: `https://www.linkedin.com/in/mr-christian-kohler/`,
+      },
+    ],
   },
   plugins: [
-    'gatsby-plugin-react-helmet',
-    'gatsby-plugin-catch-links',
     {
-      resolve: 'gatsby-source-filesystem',
+      resolve: "@narative/gatsby-theme-novela",
       options: {
-        name: 'posts',
-        path: `${__dirname}/content/posts`,
-      },
-    },
-    'gatsby-transformer-sharp',
-    {
-      resolve: 'gatsby-transformer-remark',
-      options: {
-        plugins: [
-          {
-            resolve: 'gatsby-remark-images',
-            options: {
-              maxWidth: 750,
-              quality: 90,
-              linkImagesToOriginal: true,
-            },
-          },
-          'gatsby-remark-prismjs',
-        ],
+        contentPosts: "content/posts",
+        contentAuthors: "content/authors",
+        basePath: "/",
+        authorsPage: true,
+        sources: {
+          local: true,
+          // contentful: true,
+        },
       },
     },
     {
-      resolve: 'gatsby-plugin-emotion',
+      resolve: `gatsby-plugin-manifest`,
       options: {
-        autoLabel: process.env.NODE_ENV !== 'production',
-        // eslint-disable-next-line
-        labelFormat: `[filename]--[local]`,
+        name: `Novela by Narative`,
+        short_name: `Novela`,
+        start_url: `/`,
+        background_color: `#fff`,
+        theme_color: `#fff`,
+        display: `standalone`,
+        icon: `src/assets/favicon.png`,
       },
     },
-    {
-      resolve: 'gatsby-plugin-typography',
-      options: {
-        pathToConfigModule: 'config/typography.js',
-      },
-    },
-    'gatsby-plugin-sharp',
-    'gatsby-plugin-sitemap',
-    {
-      resolve: 'gatsby-plugin-manifest',
-      options: {
-        name: config.title,
-        short_name: config.shortName,
-        description: config.description,
-        start_url: config.pathPrefix,
-        background_color: config.backgroundColor,
-        theme_color: config.themeColor,
-        display: 'standalone',
-        icon: config.favicon,
-      },
-    },
-    'gatsby-plugin-offline',
   ],
 };

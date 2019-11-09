@@ -1,152 +1,61 @@
-<p align="center">
-  <a href="https://github.com/justinformentin/gatsby-v2-tutorial-starter">
-    <img
-      src="https://i.imgur.com/mW3HLrn.png"
-      height="80"
-      alt="gatsby-v2-tutorial-starter"
-      title="Gatsby v2 Tutorial Starter"
-    />
-  </a>
-</p>
+<a href="https://novela.narative.co" target="_blank">
+<img src="https://raw.githubusercontent.com/narative/gatsby-theme-novela-example/master/assets/gatsby-theme-novela-hero.jpg" alt="gatsby-novela-theme hero image" />
+</a>
 
-<p align="center">
-  <a href="https://circleci.com/gh/justinformentin/gatsby-v2-tutorial-starter">
-    <img
-      src="https://circleci.com/gh/justinformentin/gatsby-v2-tutorial-starter.svg?style=svg"
-      alt="CircleCI"
-    />
-  </a>
-  <a href="https://codeclimate.com/github/justinformentin/gatsby-v2-tutorial-starter">
-    <img
-      src="https://codeclimate.com/github/justinformentin/gatsby-v2-tutorial-starter/badges/gpa.svg"
-      alt="Maintainability"
-    />
-  </a>
-  <a href="https://codeclimate.com/github/justinformentin/gatsby-v2-tutorial-starter">
-    <img
-      src="https://codeclimate.com/github/justinformentin/gatsby-v2-tutorial-starter/badges/issue_count.svg"
-      alt="Issues"
-    />
-  </a>
-  <a href="https://www.codacy.com/app/justinformentin/gatsby-v2-tutorial-starter?utm_source=github.com&amp;utm_medium=referral&amp;utm_content=justinformentin/gatsby-v2-tutorial-starter&amp;utm_campaign=Badge_Grade">
-    <img
-      src="https://api.codacy.com/project/badge/Grade/c910ab2b18a24dde80cfc05b73c908aa"
-      alt="Code Quality"
-    />
-  </a>
-  <a href="https://david-dm.org/justinformentin/gatsby-v2-tutorial-starter">
-    <img
-      src="https://img.shields.io/david/justinformentin/gatsby-v2-tutorial-starter.svg"
-      alt="Dependencies"
-    />
-  </a>
-  <a href="https://github.com/prettier/prettier">
-    <img
-      src="https://img.shields.io/badge/styled_with-prettier-ff69b4.svg"
-      alt="styled with prettier"
-    />
-  </a>
-  <a href="https://www.netlify.com">
-    <img
-      src="https://img.shields.io/badge/deploys%20by-netlify-00c7b7.svg"
-      alt="deploys by netlify"
-    />
-  </a>
-</p>
+<br/>
 
-<p align="center">
-  <strong>
-    View the demo at <a href="https://gatsby-tutorial-starter.netlify.com">gatsby-tutorial-starter.netlify.com</a>.
-  </strong>
-</p>
+# Gatsby Starter Novela
 
-<p align="center">
-  <strong>
-    Read the full step by step guide: <a href="https://justinformentin.com/guide-to-building-a-gatsby-site">Guide to Build a Gatsby Site with Perfect Pagespeed Scores</a></a>.
-  </strong>
-</p>
+With minimal styling and maximum features — including multiple homepage layouts, built-in social sharing and dark mode — Novela makes it easy to start publishing beautiful articles and stories with Gatsby.
 
-## Features
+Novela is built by the team at [Narative](https://www.narative.co), and built for everyone that loves the web.
 
-- Gatsby v2
-- Emotion for styling
-- Code syntax highlighting
-- Tags
-- SEO
-  - Sitemap generation
-  - Schema.org JSON-LD for Google Rich Snippets
-  - Twitter Tags
-  - OpenGraph Tags for Facebook/Google+/Pinterest
-  - robots.txt
-- Typography.js
-- Typefaces for faster font loading
-- Offline Support
-- Manifest Support
-- Gatsby Image
-  - Responsive images
-  - Traced SVG Loading with Lazy-Loading
-  - WebP Support
-- Development tools
-  - ESLint for linting
-  - Prettier for code style
-  - CircleCI support
-  - Google Lighthouse Optimization
+<div>
+<a href="https://novela.narative.co" target="_blank">
+<img src="https://raw.githubusercontent.com/narative/gatsby-theme-novela-example/master/assets/gatsby-theme-novela-cta-demo.jpg" alt="gatsby-novela-theme live demo" width="295px" />
+</a>
+</div>
 
-# Lighthouse Audit
+<div>
+<a href="https://www.narative.co/design/open/novela" target="_blank">
+<img src="https://raw.githubusercontent.com/narative/gatsby-theme-novela-example/master/assets/gatsby-theme-novela-cta-figma.jpg" alt="gatsby-novela-theme figma link" width="295px" />
+</a>
+</div>
 
-<p align="center">
-  <a href="https://github.com/justinformentin/gatsby-v2-tutorial-starter">
-    <img
-      src="https://i.imgur.com/YOVC76X.png"
-      alt="Google Lighthouse Audit"
-      title="Google Lighthouse Audit"
-    />
-  </a>
-</p>
+# Using Gatsby Starter Novela
 
-# Usage
+This guide will take you through setting up Novela with Gatsby Starter Novela.
 
-[![Deploy to Netlify](https://www.netlify.com/img/deploy/button.svg)](https://app.netlify.com/start/deploy?repository=https://github.com/justinformentin/gatsby-v2-tutorial-starter)
+### Step 1: Starter installation
 
-```bash
-Download project
-# With `gatsby-cli`
-gatsby new my-site https://github.com/justinformentin/gatsby-v2-tutorial-starter
+##### With `gatsby-cli`:
 
-OR
-
-# Cloning
-git clone my-site https://github.com/justinformentin/gatsby-v2-tutorial-starter.git
-cd my-site
-
-THEN
-
-# Install dependencies
-npm i
-
-# Start dev server
-gatsby develop
-
-# Build for production
-gatsby build
-
-# Format with Prettier
-npm format
-
+```sh
+gatsby new novela-site https://github.com/narative/gatsby-starter-novela
 ```
 
-## Folder structure
-```bash
-├──.circleci # Circleci integration
-├── config # Theme and site metadata
-├── content # Post markdown and images
-├── src
-│   ├── components
-│   ├── layouts
-│   ├── pages
-│   ├── style
-│   └── templates # For Post and Tag page generation
-├── static # Images for logo and favicon, and robots.txt
-├── gatsby-config.js # Plugin loading and configuration
-└── gatsby-node.js # Generate posts/tags and modify webpack
+##### With `git clone`:
+
+```sh
+git clone git@github.com:narative/gatsby-starter-novela.git novela-site
+
+cd novela-site
+
+yarn
 ```
+
+### Step 2: Develop & Build
+
+Once installed or cloned locally and all packages are installed you can begin developing your site.
+
+```sh
+# Run localhost
+yarn dev
+
+# Build your Gatsby site
+yarn build
+```
+
+### Help
+
+For more information visit the [Theme repository](https://github.com/narative/gatsby-theme-novela)
