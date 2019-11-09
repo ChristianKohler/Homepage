@@ -8,6 +8,8 @@ published: true
 canonical_url: "https://christiankohler.net/introducing-papertown"
 masterid: 20191109
 excerpt: Dead simple blog syndication for everyone
+description: Dead simple blog syndication for everyone
+tags: javascript, webdev, productivity, gatsby
 ---
 
 [Papertown](https://github.com/ChristianKohler/papertown) syncs you personal markdown blog with blog platforms like dev.to. It's a command line tool and works perfectly in combination with static blog frameworks like [Gatsby](https://www.gatsbyjs.org/).
@@ -19,7 +21,7 @@ The core idea of [Papertown](https://github.com/ChristianKohler/papertown) is th
 ```javascript
 // Current setup
 +-----------+       +-----------+        +-----------+
-| Commit md |  ---> |  Gatsby   |  --->  |  Webhost  |
+| Commit md |  ---> |  Gatsby   |  --->  |  Webhost  |
 +-----------+       +-----------+        +-----------+
 ```
 
