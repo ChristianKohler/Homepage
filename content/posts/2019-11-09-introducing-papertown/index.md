@@ -16,7 +16,7 @@ tags: javascript, webdev, productivity, gatsby
 
 # The idea 💡
 
-The core idea of [Papertown](https://github.com/ChristianKohler/papertown) is that it runs on overy commit and creates and updates blogpost on dev.to and other platforms.
+The core idea of [Papertown](https://github.com/ChristianKohler/papertown) is that it runs on every commit and creates and updates blogpost on dev.to and other platforms.
 
 ```javascript
 // Current setup
