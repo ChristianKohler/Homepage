@@ -3,7 +3,7 @@ title: "Introducing Papertown"
 author: Chris Kohler
 date: "2019-11-09"
 hero: "./images/hero.png"
-cover_image: "https://thepracticaldev.s3.amazonaws.com/i/r6y5v0tlsem4m01ydg1z.png"
+cover_image: "./images/hero.png"
 published: true
 canonical_url: "https://christiankohler.net/introducing-papertown"
 masterid: 20191109
@@ -105,3 +105,7 @@ Source is MIT and on Github: https://github.com/ChristianKohler/papertown
 # What's next? 👀
 
 Over the next weeks I will focus on the dev.to integration and fixing bugs. The highest prioritiy currently is adding support for images. After that I will start to work on the medium integration. If you would like to help please open an issue or pr on Github. All contributions are appreciated.
+
+## Update
+
+Version 1.2.0 comes with image support. That means that relative urls are now converted to github raw urls.
