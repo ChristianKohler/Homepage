@@ -6,26 +6,26 @@ module.exports = {
     description: `Chris Kohler`,
     hero: {
       heading: `<b>Hi, I am Chris</b>, I live in Zurich, Switzerland. I am a software engineer with a <b>passion for JavaScript</b> and Web Technologies.`,
-      maxWidth: 652,
+      maxWidth: 652
     },
     social: [
       {
         name: `twitter`,
-        url: `https://twitter.com/kohlerchristian`,
+        url: `https://twitter.com/kohlerchristian`
       },
       {
         name: `github`,
-        url: `https://github.com/christiankohler`,
+        url: `https://github.com/christiankohler`
       },
       {
         name: `instagram`,
-        url: `https://instagram.com/mrchriskohler`,
+        url: `https://instagram.com/mrchriskohler`
       },
       {
         name: `linkedin`,
-        url: `https://www.linkedin.com/in/mr-christian-kohler/`,
-      },
-    ],
+        url: `https://www.linkedin.com/in/mr-christian-kohler/`
+      }
+    ]
   },
   plugins: [
     {
@@ -36,10 +36,10 @@ module.exports = {
         basePath: "/",
         authorsPage: true,
         sources: {
-          local: true,
+          local: true
           // contentful: true,
-        },
-      },
+        }
+      }
     },
     {
       resolve: `gatsby-plugin-manifest`,
@@ -50,8 +50,15 @@ module.exports = {
         background_color: `#fff`,
         theme_color: `#fff`,
         display: `standalone`,
-        icon: `src/assets/favicon.png`,
-      },
+        icon: `src/assets/favicon.png`
+      }
     },
-  ],
+    {
+      resolve: `gatsby-plugin-google-analytics`,
+      options: {
+        // replace "UA-XXXXXXXXX-X" with your own Tracking ID
+        trackingId: "UA-153201075-1"
+      }
+    }
+  ]
 };
