@@ -129,3 +129,5 @@ It's very easy and very little work to set up a "newrule" config and enforce the
 > “How do you eat an elephant? One bite at a time.”
 
 \* I am strongly against eating elephants. It's a saying. Google it 😉
+
+Hero photo by @keilahoetzel
