@@ -17,9 +17,16 @@ Linters like ESLint or TSLint can help make your code more readable and maintain
 
 This article focuses on introducing linters in existing codebases.
 
+# tl;dr;
+
+- Use autofix if possible
+- Extend lint config with a second config
+- Add new rules to the second config
+- Run linter with the second config with a precommit hook
+
 # The problem
 
-Let's say the codebase is 1000 files large. You create a linter config, run the linter and you get like 1000000 errors. 🤯😱
+Let's say the codebase is 1000 files large. You create a linter config, run the linter and you get like **1000000 errors**. 🤯😱
 
 Now what can you do?
 
@@ -43,16 +50,21 @@ If you can't auto fix it, you have to manually fix it. That can be a "herculean 
 
 > Leave your code better than you found it. ...
 
-## Different Rules for CI/CD and local development
-
-The best way to apply new rules is:
+The boy scout approach to apply new rules is:
 
 - Fix existing errors when you touch existing code
 - Don't add new errors
 
-This can be achieved by having to sets of rules:
+## Different Rules for CI/CD and changed files
 
-**tslint.json**
+We need two sets of rules. The main one and one which extends it and adds new rules.
+
+| Name                 | Usage          | Rules                                        |
+| -------------------- | -------------- | -------------------------------------------- |
+| tslint.json          | CI/CD          | Rules which apply for all files              |
+| tslint.newrules.json | precommit hook | New rules which only apply for changed files |
+
+**Example tslint.json**
 
 Used by the CI/CD pipeline.
 
@@ -65,7 +77,7 @@ Used by the CI/CD pipeline.
 }
 ```
 
-**tslint.newrules.json**
+**Example tslint.newrules.json**
 
 Used during the precommit hook.
 
@@ -89,9 +101,9 @@ Important: The tslint.newrules.json extends the main ruleset.
 
 ## Enforce tslint.newrules.json with a precommit hook
 
-That part is very easy nowadays thanks to the amazing libraries [lint-staged](https://github.com/okonet/lint-staged) and [husky](https://github.com/typicode/husky).
+This part is very easy nowadays thanks to the amazing libraries [lint-staged](https://github.com/okonet/lint-staged) and [husky](https://github.com/typicode/husky).
 
-So just install lint-staged and then configure the precommit hook to run tslint or eslint with the the correct configuration:
+So just install lint-staged and then configure the precommit hook to run tslint or eslint with the the correct configuration.
 
 ```
 npm install --save-dev lint-staged@beta
@@ -112,4 +124,8 @@ npm install --save-dev lint-staged@beta
 
 # Summary
 
-It's very easy and very little work to set up a "newrule" config and enforce the config with a precommit hook. Now your codebase should become better every day as people are working on it. Without the upfront costs you'd have with fixing all errors in one commit.
+It's very easy and very little work to set up a "newrule" config and enforce the config with a precommit hook. Now your codebase should become better every day as people are working on it. Without the upfront costs you'd have with fixing all errors in one commit. That's how you eat an elephant\*. One bite at a time.
+
+> “How do you eat an elephant? One bite at a time.”
+
+\* I am strongly against eating elephants. It's a saying. Google it 😉
