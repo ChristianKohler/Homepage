@@ -104,7 +104,7 @@ Source is MIT and on Github: https://github.com/ChristianKohler/papertown
 
 # What's next? 👀
 
-Over the next weeks I will focus on the dev.to integration and fixing bugs. The highest prioritiy currently is adding support for images. After that I will start to work on the medium integration. If you would like to help please open an issue or pr on Github. All contributions are appreciated.
+Over the next weeks I will focus on the dev.to integration and fixing bugs. ~~The highest prioritiy currently is adding support for images~~. After that I will start to work on the medium integration. If you would like to help please open an issue or pr on Github. All contributions are appreciated.
 
 ## Update
 
