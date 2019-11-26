@@ -1,11 +1,11 @@
 ---
 title: "One bite at a time - How to introduce new lint rules in a large codebase"
 author: Chris Kohler
-date: "2019-11-25"
+date: "2019-11-26"
 hero: "./images/hero.jpg"
 cover_image: "./images/hero.jpg"
-published: false
-secret: true
+published: true
+secret: false
 canonical_url: "https://christiankohler.net/one-bite-at-a-time-how-to-introduce-new-lint-rules-in-a-large-codebase"
 masterid: 20191125
 excerpt: How to improve legacy code by gradually introducing linting rules.
@@ -13,9 +13,9 @@ description: How to improve legacy code by gradually introducing linting rules.
 tags: javascript, webdev, lint,
 ---
 
-Linters like ESLint or TSLint can help make your code more readable and maintainable and help you to identify errors earlier. It's a good thing to use linters from the start of a project but it's also a good idea to introduce linters in an existing codebases.
+Linters such as ESLint or TSLint can help make your code more readable and maintainable, and help you detect errors earlier. It's good to use linters from the beginning, but it's also a good idea to introduce linters into an existing code base.
 
-This article focuses on introducing linters in existing codebases.
+This article focuses on the introduction of linters into existing code bases.
 
 # tl;dr;
 
@@ -44,7 +44,7 @@ Tip: All autofixable keywords in the [list](https://palantir.github.io/tslint/ru
 
 **Manually fix**
 
-If you can't auto fix it, you have to manually fix it. That can be a "herculean task". So what often happens is that a rule is just not used because it's to much work to fix all the existing errors.
+If you can't fix it automatically, you have to fix it manually. This can be a "Herculean task". So what often happens is that a rule is simply not used because it's too much work to fix all existing bugs.
 
 # The solution: The Boy Scout Rule
 
@@ -124,7 +124,7 @@ npm install --save-dev lint-staged@beta
 
 # Summary
 
-It's very easy and very little work to set up a "newrule" config and enforce the config with a precommit hook. Now your codebase should become better every day as people are working on it. Without the upfront costs you'd have with fixing all errors in one commit. That's how you eat an elephant\*. One bite at a time.
+It is easy and very little work to set up a "newrule" configuration and enforce the configuration with a pre-commit hook. Now your codebase should get better every day as people work on it. Without the upfront costs, you would have to fix all the bugs in a commit. That's how you eat an elephant. One bite at a time.
 
 > “How do you eat an elephant? One bite at a time.”
 
