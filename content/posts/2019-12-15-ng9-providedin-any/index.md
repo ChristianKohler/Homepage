@@ -1,23 +1,37 @@
 ---
-title: "Angular 9 - What's providedIn 'any' and 'platform' for?"
+title: "Improved Dependeny Injection with the new providedIn scopes any and platform"
 author: Chris Kohler
 date: "2019-12-15"
 hero: "./images/hero.jpg"
 cover_image: "./images/hero.jpg"
 published: false
-secret: true
-canonical_url: "https://christiankohler.net/angular-9-what-s-providedin-any-and-platform-for"
+secret: false
+canonical_url: "https://christiankohler.net/improved-dependeny-injection-with-the-new-providedin-scopes-any-and-platform"
 masterid: 20191215
-excerpt: A detailed look into the new scopes for providedIn
-description: A detailed look into the new scopes for providedIn
+excerpt: A detailed look into the new scopes for providedIn with Angular 9
+description: A detailed look into the new scopes for providedIn with Angular 9
 tags: angular, typescript, frontend,
 ---
 
-Have you looked at the changelog of Angular 9 and found the new functionality of providedin and want to know what 'any' and 'platform' are for? In this article we look at the two new scopes of providedIn.
+Have you looked at the changelog of Angular 9 and found the new functionality of providedIn and want to know what 'any' and 'platform' are for? In this article we look at the two new scopes of providedIn.
 
 ![changelog](./images/changelog.jpg)
 
-# Official documentation
+# tl;dr
+
+'platform' and 'any' are two new ways to define where a service should be resolved.
+
+```typescript
+@Injectable({
+  providedIn: "root" | "any" | "platform"
+})
+export class MyService {}
+```
+
+- 'platform' makes a service available between multiple apps or Angular Elements
+- 'any' creates isolated (not singleton) services for every child injector.
+
+# Official Angular 9 documentation
 
 The [offical documentation](https://next.angular.io/api/core/Injectable) describes the new scopes as follows:
 
@@ -123,7 +137,7 @@ What's really cool with that approach is, that you can make sure that a child in
 
 'Root' will still be the default for most services. It makes it very convenient to create tree-shakable services which are singleton within an application.
 
-'Platform' is most likely used for creating shared services for Angular Elements. If know another usecase, please let me know an create a [PR on this article](https://github.com/ChristianKohler/Homepage).
+'Platform' is most likely used for creating shared services for Angular Elements. If you know another use case, please let me know an create a [PR on this article](https://github.com/ChristianKohler/Homepage/blob/master/content/posts/2019-12-15-ng9-providedin-any/index.md).
 
 'Any' is very helpful to make sure a service is a singleton within module boundaries. It's a robust alternative to 'root' to make sure the individual modules don't have a side effect on each other.
 
