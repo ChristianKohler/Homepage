@@ -142,3 +142,5 @@ What's really cool with that approach is, that you can make sure that a child in
 'Any' is very helpful to make sure a service is a singleton within module boundaries. It's a robust alternative to 'root' to make sure the individual modules don't have a side effect on each other.
 
 All in all a very welcome feature 🥳
+
+👆 If you like the article follow me on [twitter](https://twitter.com/kohlerchristian) 🙌
