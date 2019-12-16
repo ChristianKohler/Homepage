@@ -1,5 +1,5 @@
 ---
-title: "Improved Dependeny Injection with the new providedIn scopes any and platform"
+title: "Improved Dependeny Injection with the new providedIn scopes 'any' and 'platform'"
 author: Chris Kohler
 date: "2019-12-15"
 hero: "./images/hero.jpg"
