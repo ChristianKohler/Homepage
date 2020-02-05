@@ -1,5 +1,5 @@
 ---
-title: "Improved Dependeny Injection with the new providedIn scopes 'any' and 'platform'"
+title: "Improved Dependency Injection with the new providedIn scopes 'any' and 'platform'"
 author: Chris Kohler
 date: "2019-12-15"
 hero: "./images/hero.jpg"
@@ -107,7 +107,7 @@ Let's have a look at them.
 
 Every service defined with **'root'** will be provided in the root injector and is a singleton for the whole application. Lazy modules will use the instance from root.
 
-![providedinroot](./images/providedInroot.png)
+![providedinroot](./images/providedInroot2.png)
 
 > providedIn: 'root' will still be the default choice for most services.
 
