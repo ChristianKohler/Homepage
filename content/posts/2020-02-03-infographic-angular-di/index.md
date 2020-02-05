@@ -19,9 +19,9 @@ Angular has it's on dependency injection framework. It's very powerful and helps
 
 👩‍🚀 Protip: 🖨 Print your DI poster and hang it in the toilet. Within a few weeks your work colleagues are DI experts 😀
 
-✅ Also feel free to use the poster for education purposes like workshops or classes.
+✅ Also feel free to use the poster for education purposes like workshops or in classes.
 
-👆 It took me hours to complete this cheatsheet. If you like the poster follow me on [twitter](https://twitter.com/kohlerchristian) and spread the word 🙌
+👆 It took me hours to complete this cheatsheet. If you like it follow me on [twitter](https://twitter.com/kohlerchristian) and spread the word 🙌
 
 [Download Angular DI Infographic as PDF](./angular-di-infographic.pdf)
 
