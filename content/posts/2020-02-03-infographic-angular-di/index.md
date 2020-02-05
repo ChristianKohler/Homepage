@@ -13,7 +13,7 @@ description: A graphical overview over Angular Dependency Injection.
 tags: angular, dependency injection, infographic,
 ---
 
-Angular has it's on dependency injection framework. It's very powerful and helps increase the effiency and modularity of your application. It can also be quit complex when compared to traditional Di frameworks.
+Angular has its on dependency injection framework. It's very powerful and helps increase the effiency and modularity of your application. It can also be quit complex when compared to traditional Di frameworks.
 
 [The official documentation](https://angular.io/guide/dependency-injection) is very well written and a must read for every Angular developer. The only thing missing for me was a good graphical overview. This is why I created this infographic poster.
 
