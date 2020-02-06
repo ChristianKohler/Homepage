@@ -23,6 +23,8 @@ Angular has its own dependency injection framework. It's very powerful and helps
 
 👆 It took me hours to complete this cheatsheet. If you like it follow me on [twitter](https://twitter.com/kohlerchristian) and spread the word 🙌
 
+🤓 Did you find a mistake? Please help improve the infographic and open an issue [here](https://github.com/ChristianKohler/homepage)
+
 [Download Angular DI Infographic as PDF](./angular-di-infographic.pdf)
 
 ![thumbnail](./images/poster-thumbnail.png)
