@@ -4,8 +4,8 @@ author: Chris Kohler
 date: "2020-02-03"
 hero: "./images/hero.jpg"
 cover_image: "./images/hero.jpg"
-published: false
-secret: true
+published: true
+secret: false
 canonical_url: "https://christiankohler.net/angular-dependency-injection-infographic"
 masterid: 20200203
 excerpt: A graphical overview over Angular Dependency Injection.
