@@ -30,3 +30,9 @@ Angular has its own dependency injection framework. It's very powerful and helps
 ![thumbnail](./images/poster-thumbnail.png)
 
 [Download Angular DI Infographic as PDF](./angular-di-infographic.pdf)
+
+## Update 20.02.2020
+
+- Added providedIn: Module example
+- Simplified Provider Syntax (removed string tokens)
+- Minor design improvements
