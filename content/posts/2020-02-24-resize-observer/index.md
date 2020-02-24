@@ -157,9 +157,9 @@ export class MyComponent implements OnInit {
 
 If you are following this example you may have tried to bind the width directly to the class property. Unfortunately the template is not rerendered and keeps the initial value.
 
-The reason is that Angular has monkey-patched most of the events but not (yet) ResizeObserver.
+The reason is that Angular has monkey-patched most of the events but not (yet) ResizeObserver. This means that this callback runs outside of the zone.
 
-We can easily fix that by calling change detection manually.
+We can easily fix that by manually running it in the zone.
 
 ```typescript
 export class MyComponent implements OnInit {
@@ -167,13 +167,14 @@ export class MyComponent implements OnInit {
 
   constructor(
     private host: ElementRef, 
-    private cdRef: ChangeDetectorRef
+    private zone: NgZone
   ) {}
 
   ngOnInit() {
     const observer = new ResizeObserver(entries => {
-      this.width = entries[0].contentRect.width;
-      this.cdRef.detectChanges();
+      this.zone.run(() => {
+        this.width = entries[0].contentRect.width;
+      });
     });
 
     observer.observe(this.host.nativeElement);
@@ -192,13 +193,14 @@ export class MyComponent implements OnInit, OnDestroy {
 
   constructor(
     private host: ElementRef, 
-    private cdRef: ChangeDetectorRef
+    private zone: NgZone
   ) {}
 
   ngOnInit() {
     this.observer = new ResizeObserver(entries => {
-      this.width = entries[0].contentRect.width;
-      this.cdRef.detectChanges();
+      this.zone.run(() => {
+        this.width = entries[0].contentRect.width;
+      });
     });
 
     this.observer.observe(this.host.nativeElement);
@@ -219,13 +221,14 @@ export class MyComponent implements OnInit, OnDestroy {
 
   constructor(
     private host: ElementRef, 
-    private cdRef: ChangeDetectorRef
+    private zone: NgZone
   ) {}
 
   ngOnInit() {
     this.observer = new ResizeObserver(entries => {
-      this.width$.next(entries[0].contentRect.width);
-      this.cdRef.detectChanges();
+      this.zone.run(() => {
+        this.width$.next(entries[0].contentRect.width);
+      });
     });
 
     this.observer.observe(this.host.nativeElement);
