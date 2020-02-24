@@ -4,8 +4,8 @@ author: Chris Kohler
 date: "2020-02-24"
 hero: "./images/hero.jpg"
 cover_image: "./images/hero.jpg"
-published: false
-secret: true
+published: true
+secret: false
 canonical_url: "https://christiankohler.net/how-to-use-resizeobserver-with-angular"
 masterid: 20200224
 excerpt: Observe resize events on elements with Angular
@@ -19,9 +19,14 @@ Sometimes we need to execute JavaScript when an element is resized.
 
 Current solutions are **based on the viewport dimension**, **not** on **element dimensions**.
 
-ResizeObserver is a new API which allows us to react to element resizing. It takes a few steps to use it properly with Angular. You have to make sure to unobserve on destroy and that an event does trigger change detection.
+ResizeObserver is a new API which allows us to react to element resizing. 
 
-That's why I've created a library to simplify the usage with Angular. 🚀
+There are a few steps required to use it properly with Angular. You have to make sure:
+
+* to unobserve on destroy
+* that change detection is triggered
+
+I found it to cumbersome to do it on every component. That's why I've created a library to simplify the usage with Angular. 🚀
 
 # ✨React to element dimension changes
 
@@ -35,7 +40,7 @@ Let's start with why we need a new API.
 
 # 💣 What's the problem with window.onchange?
 
-We are only interested in events where our component changes its width. Unfortunately window.onchange sometimes fires too often or not at all.
+We are only interested in events where our component changes its width. Unfortunately window.onchange sometimes fires **too often** or **not at all**.
 
 ## onchange fires too often
 
@@ -43,7 +48,7 @@ This happens when the viewport changes but our component doesn't. Do you see the
 
 ![](images/onresize-fires-too-much.png)
 
-## onchange doesn't fire
+## onchange doesn't fire (but should)
 
 This happens when the viewport doesn't change but the elements within change.
 
@@ -55,6 +60,8 @@ This happens when the viewport doesn't change but the elements within change.
 In the graphic below the viewport doesn't change and the sidebar gets expanded. The ResizeObserver triggers but the window.onresize doesn't.
 
 ![](images/onresize-doesnt-fire.png)
+
+Now that we know why we need the new ResizeObserver Api we will take a closer look at it.
 
 # 🚀 ResizeObserver in a nutshell
 
@@ -211,6 +218,8 @@ export class MyComponent implements OnInit, OnDestroy {
   }
 }
 ```
+
+Want to try it out? [Here is a live example](https://stackblitz.com/edit/angular-resize-observer-example?file=src%2Fapp%2Fapp.module.ts).
 
 ## 5: Protip: Create a stream with RxJS
 
