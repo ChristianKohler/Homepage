@@ -140,7 +140,7 @@ Notice how this is a very similar to reacts approach?
 
 # 🚧 Async Pipe
 
-With Zone.js deactivated the first idea for a reactive approach would be to use Angulars Async pipe to trigger change detection when a new value is emitted.
+With Zone.js deactivated the first idea for a reactive approach would be to use Angulars async pipe to trigger change detection when a new value is emitted.
 
 ```typescript
 @Component({
@@ -164,9 +164,9 @@ export class AppComponent {
 }
 ```
 
-Unfortunately that _doesn't trigger the change detection_ since the Async pipe only runs markForChecked on the components ChangeDetectorRef.
+Unfortunately that **doesn't trigger change detection** since the async pipe only runs markForChecked on the components ChangeDetectorRef.
 
-So we need a Async pipe which can trigger change detection. Luckily the ngrx team is [working](https://github.com/ngrx/platform/pull/2046) on exactly that.
+So we need an async pipe which can trigger change detection. Luckily the ngrx team is [working](https://github.com/ngrx/platform/pull/2046) on exactly that.
 
 # 🚀 ngrx PushPipe and let directive
 
@@ -225,11 +225,11 @@ width \*ngrxLet:
 
 # ❓ Should I now rewrite my code to zone-less?
 
-Short answer: **No**
+Short answer: **Not yet**
 
 - ✅ For most use cases Zone.js works very well
 - 🧨 PushPipe and the let directive are not released yet (as of 23 March 2020)
-- 🧨 Many 3rd party lib rely on Zone.js
+- 🧨 Many 3rd party libraries rely on Zone.js
 
 One area where I see a lot of benefits though are Angular Elements. It would simplify the usage of Angular Elements and reduce the bundle size.
 
