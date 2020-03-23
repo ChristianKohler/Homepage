@@ -53,8 +53,6 @@ But every design decision has its pros and cons.
 
 I often see how part of an Angular application is written in a imperative way and part of it reactive. It's not always a bad thing but I feel that the mix often makes it harder to read code.
 
-<blockquote class="twitter-tweet"><p lang="en" dir="ltr">In <a href="https://twitter.com/hashtag/rxjs?src=hash&amp;ref_src=twsrc%5Etfw">#rxjs</a> .subscribe() is where reactive programming ends</p>&mdash; Michael Rx Hladky (@Michael_Hladky) <a href="https://twitter.com/Michael_Hladky/status/1180316203937681410?ref_src=twsrc%5Etfw">October 5, 2019</a></blockquote>
-
 ## When should we run change detection? 🔦
 
 With Zone.js Angular change detection magically works for almost any scenario. To make it work, it assumes that whenever you have an event like a click event, the state changed and the view has to be rerendered.
@@ -181,6 +179,8 @@ The ngrx team is working on a new library name ngrx/component. It's not released
 Or as [Michael Hladky](https://twitter.com/Michael_Hladky/status/1180316203937681410?ref_src=twsrc%5Etfw) says:
 
 > "The idea of ngrx/component is building applications where the word subscribe is not present."
+
+<blockquote class="twitter-tweet"><p lang="en" dir="ltr">In <a href="https://twitter.com/hashtag/rxjs?src=hash&amp;ref_src=twsrc%5Etfw">#rxjs</a> .subscribe() is where reactive programming ends</p>&mdash; Michael Rx Hladky (@Michael_Hladky) <a href="https://twitter.com/Michael_Hladky/status/1180316203937681410?ref_src=twsrc%5Etfw">October 5, 2019</a></blockquote>
 
 Currently it consists of two features:
 
