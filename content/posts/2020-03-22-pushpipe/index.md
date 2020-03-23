@@ -140,7 +140,7 @@ The main idea behind the zone-less reactive approach is:
 
 > When every view state is an observable, we know exactly when to trigger change detection.
 
-Notice how this is a very similar to reacts approach?
+Notice how this is a very similar to Reacts approach?
 
 ## Async Pipe 🚧
 
@@ -215,7 +215,7 @@ Another great addition to make it easier to build reactive Angular components is
 
 The let directive is similar to \*ngIf but handles 0 values and supports zone-less the same way the PushPipe does. That means it also triggers change detection when a new value is emitted.
 
-The let-directive does not provide the show/hide funtionality which is imho a good design decision. The let-directive binds to observable values and the ngIf can then be used for the show/hide logic. A nice seperation of concerns.
+The let-directive does not provide the show/hide funtionality which is imho a good design decision. The let-directive binds to observable values and the ngIf can then be used for the show/hide logic. It's a nice seperation of concerns.
 
 #### Usage
 
@@ -233,14 +233,14 @@ width \*ngrxLet:
 
 #### Example
 
-[Here is a Stackblitz example](https://stackblitz.com/edit/blog-pushpipe-example?file=src/app/app.module.ts) with the counter and the let directive. Try it out and replace the ngrxLet with tgif to see how it affects change detection. Also check the [Let directive documentation](https://github.com/ngrx/platform/blob/680f77fbe38c8086f9684f9033d7722b14a78025/projects/ngrx.io/content/guide/component/let.md) for more examples.
+[Here is a Stackblitz example](https://stackblitz.com/edit/blog-pushpipe-example?file=src/app/app.module.ts) with the counter and the let directive. Try it out and replace the ngrxLet with ngif to see how it affects change detection. Also check the [Let directive documentation](https://github.com/ngrx/platform/blob/680f77fbe38c8086f9684f9033d7722b14a78025/projects/ngrx.io/content/guide/component/let.md) for more examples.
 
 ### How PushPipe and the let-directive improve performance?
 
 PushPipe and the let-directive improve performance in two ways:
 
 - Only trigger change detection when a new observable value is emitted
-- Trigger change detection only for the component and its children.
+- Trigger change detection only for the component and its children
 
 ## Should I now rewrite my code to zone-less? ❓
 
@@ -270,7 +270,7 @@ One area where I see a lot of benefits as well are Angular Elements. It would si
 
 It's getting easier to write zone-less Angular code and might be the way how we write Angular apps in a year or two.
 
-If you are a 3rd party library make sure your library works in a zone-less environment.
+If you are a 3rd party library maintainer make sure your library works in a zone-less environment.
 
 If you are a developer, embrace RxJs and write your code in a reactive way. It will make it easier for you to use new features like the PushPipe.
 
