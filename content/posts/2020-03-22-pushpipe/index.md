@@ -264,7 +264,7 @@ The let-directive is also more than just a zone-less ngIf. It seperates the show
 
 ### Angular Elements
 
-One area where I see a lot of benefits though are Angular Elements. It would simplify the usage of Angular Elements and reduce the bundle size.
+One area where I see a lot of benefits as well are Angular Elements. It would simplify the usage of Angular Elements and reduce the bundle size.
 
 ## Be ready for a zone-less future 👩‍🚀
 
