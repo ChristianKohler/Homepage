@@ -19,7 +19,7 @@ Angular change detection relies on Zone.js which works well in most situations b
 
 With the rise of reactive programming in Angular we might not need Zone.js at all and instead trigger change detection whenever the view state changes.
 
-The ngrx team is working on a library named ngrx/component to make it easier to trigger change detection with observables.
+[Michael Hladky](https://twitter.com/Michael_Hladky/status/1180316203937681410?ref_src=twsrc%5Etfw) is working on a library named ngrx/component to make it easier to trigger change detection with observables.
 
 In this article we look at how this new library helps us write maintainable code without Zone.js
 
@@ -176,11 +176,11 @@ export class AppComponent {
 
 Unfortunately that **doesn't trigger change detection** since the async pipe only runs markForChecked on the components ChangeDetectorRef.
 
-So we need an async pipe which can trigger change detection. Luckily the ngrx team is [working](https://github.com/ngrx/platform/pull/2046) on exactly that.
+So we need an async pipe which can trigger change detection. Luckily there is a library [coming up](https://github.com/ngrx/platform/pull/2046) for exactly that.
 
 ## ngrx PushPipe and let directive 🚀
 
-The ngrx team is working on a new library name ngrx/component. It's not released yet but we can already try it out. It's a collection of tools to make it easier to write reactive angular components.
+[Michael Hladky](https://twitter.com/Michael_Hladky/status/1180316203937681410?ref_src=twsrc%5Etfw) is working on a new library name ngrx/component. It's not released yet but we can already try it out. It's a collection of tools to make it easier to write reactive angular components.
 
 Or as [Michael Hladky](https://twitter.com/Michael_Hladky/status/1180316203937681410?ref_src=twsrc%5Etfw) says:
 
