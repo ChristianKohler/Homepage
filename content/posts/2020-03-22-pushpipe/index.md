@@ -28,7 +28,7 @@ In this article we look at how this new library helps us write maintainable code
 1. 🤔 What's wrong with Zone.js?
 2. 🔦 When should we run change detection?
 3. 🚲 Zone less approach in Angular
-4. 💡 The reactive zone-less approach
+4. 💡 Change detection in a reactive application
 5. 🚧 Async Pipe
 6. 🚀 ngrx PushPipe and let directive
 7. ❓ Should I now rewrite my code?
@@ -140,9 +140,9 @@ export class AppComponent {
 
 This approach works but involves a lot of manual work and pollutes our code with change detection logic. Also due to the imperative nature of that code it can become very difficult to understand what triggered change detection the more complex the code gets.
 
-## The reactive zone-less approach 💡
+## Change detection in a reactive application 💡
 
-The main idea behind the zone-less reactive approach is:
+In a reactive application we know exactly when a change happens. Every time a new value is emitted in a observable. And whenever a change happens we can trigger change detection. This means we don't need to rely on Zone.js to trigger change detection.
 
 > When every view state is an observable, we know exactly when to trigger change detection.
 
