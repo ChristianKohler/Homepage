@@ -31,8 +31,8 @@ In this article we look at how this new library helps us write maintainable code
 4. 💡 The reactive zone-less approach
 5. 🚧 Async Pipe
 6. 🚀 ngrx PushPipe and let directive
-7. ❓ Should I now rewrite my code to zone-less?
-8. 👩‍🚀 Be ready for a zone-less future
+7. ❓ Should I now rewrite my code?
+8. 👩‍🚀 Be ready for a reactive (zone-less) future
 9. 📚 Resources
 
 ## What's wrong with Zone.js? 🤔
@@ -52,6 +52,12 @@ But every design decision has its pros and cons.
 ### Zones.js allows for a mix of imperative and reactive code
 
 I often see how part of an Angular application is written in a imperative way and part of it reactive. It's not always a bad thing but I feel that the mix often makes it harder to read code.
+
+In 2019 Rob Wormald talked about Zone.js in his keynote. He said:
+
+> Zones are great until they are not.
+
+Watch the full keynote here: [Rob Wormald - Keynote - What's New and Coming in Angular | AngularUP 2019](https://www.youtube.com/watch?v=-32nh-pGXaU&feature=youtu.be&t=19m10s)
 
 ## When should we run change detection? 🔦
 
@@ -242,17 +248,21 @@ PushPipe and the let-directive improve performance in two ways:
 - Only trigger change detection when a new observable value is emitted
 - Trigger change detection only for the component and its children
 
-## Should I now rewrite my code to zone-less? ❓
+## Should I now rewrite my code? ❓
 
 Short answer: **Keep Zone.js for now but start using PushPipe and let-directive**
 
-### ✅ For most use cases Zone.js works very well
+What I showed you in the examples is a zone-less full reactive Angular example. You don't have to go zone-less to make your application more reactive. Let's look at the different motivations behind using ngrx/component.
 
-If you don't have any problems with Zone.js or performance I would keep Zone.js turned on.
+### Motivation "Reactive Angular"
 
-### 🧨 Some 3rd party libraries rely on Zone.js
+If you don't have any problems with Zone.js or performance I would keep Zone.js turned on. Focus on writing reactive code. Ngrx/component makes it easier with features like the let-directive.
 
-If you turn off Zone.js, some 3rd party libraries might not work anymore. For example, Angular Material select doesn't work out of the box without Zone.js. Try it out and disable Zone.js [here](https://stackblitz.com/angular/lymrvyjbndk?file=src%2Fmain.ts).
+### Motivation "Zone-less Angular"
+
+You want to get rid of Zone.js and improve performance by only rerendering the current component and its children. A good use case would be Angular Elements. It would simplify the usage of Angular Elements and reduce the bundle size. Ngrx/component is the easiest way to go Zone-less by only replacing the async pipe with the new PushPipe.
+
+🧨 If you turn off Zone.js, some 3rd party libraries might not work anymore. For example, Angular Material select doesn't work out of the box without Zone.js. Try it out and disable Zone.js [here](https://stackblitz.com/angular/lymrvyjbndk?file=src%2Fmain.ts).
 
 ### ✨ Start using PushPipe and the let-directive
 
@@ -262,23 +272,19 @@ Since both, PushPipe and let-directive, work with Zone.js enabled you can **use 
 
 The let-directive is also more than just a zone-less ngIf. It seperates the show/hide functionality from binding to observable values.
 
-### Angular Elements
+## Be ready for a reactive (zone-less) future 👩‍🚀
 
-One area where I see a lot of benefits as well are Angular Elements. It would simplify the usage of Angular Elements and reduce the bundle size.
-
-## Be ready for a zone-less future 👩‍🚀
-
-It's getting easier to write zone-less Angular code and might be the way how we write Angular apps in a year or two.
-
-If you are a 3rd party library maintainer make sure your library works in a zone-less environment.
+Angular makes it easy to write reactive code. Default libraries like the router and the http client provide observables. Ngrx builds on observables. With ngrx/components it gets even easier to write full reactive code. Full reactive code makes it also much easier to know when to trigger change detection and to write zone-less code.
 
 If you are a developer, embrace RxJs and write your code in a reactive way. It will make it easier for you to use new features like the PushPipe.
+
+If you are a 3rd party library maintainer make sure your library works in a zone-less environment.
 
 If you liked the article 🙌, spread the word and [follow me on twitter](https://twitter.com/KohlerChristian) for more posts on Angular and web technologies.
 
 ## Resources 📚
 
-- [Roadmap](https://github.com/ngrx/platform/issues/2441)
+- [Ngrx component Roadmap](https://github.com/ngrx/platform/issues/2441)
 - [Design Doc - Coalescing of Change Detection - HackMD](https://hackmd.io/42oAMrzYReizA65AwQ7ZlQ)
 - [Design Doc - Push Pipe - HackMD](https://hackmd.io/Uus0vFu3RmWRVGgmtzuUWQ?view)
 - [Design Doc - Let Directive - HackMD](https://hackmd.io/8_3rp0A7RweSYJiulsifbQ?view)
