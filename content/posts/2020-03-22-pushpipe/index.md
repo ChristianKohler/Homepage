@@ -186,7 +186,7 @@ Or as [Michael Hladky](https://twitter.com/Michael_Hladky) says:
 
 > "The idea of ngrx/component is building applications where the word subscribe is not present."
 
-<blockquote class="twitter-tweet"><p lang="en" dir="ltr">In <a href="https://twitter.com/hashtag/rxjs?src=hash&amp;ref_src=twsrc%5Etfw">#rxjs</a> .subscribe() is where reactive programming ends</p>&mdash; Michael Rx Hladky (@Michael_Hladky) <a href="https://twitter.com/Michael_Hladky">October 5, 2019</a></blockquote>
+<blockquote class="twitter-tweet"><p lang="en" dir="ltr">In <a href="https://twitter.com/hashtag/rxjs?src=hash&amp;ref_src=twsrc%5Etfw">#rxjs</a> .subscribe() is where reactive programming ends</p>&mdash; Michael Rx Hladky (@Michael_Hladky) <a href="https://twitter.com/Michael_Hladky/status/1180316203937681410?ref_src=twsrc%5Etfw">October 5, 2019</a></blockquote>
 
 Currently it consists of two features:
 
