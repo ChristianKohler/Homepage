@@ -4,12 +4,12 @@ author: Chris Kohler
 date: "2020-03-22"
 hero: "./images/hero.jpg"
 cover_image: "./images/hero.jpg"
-published: false
-secret: true
+published: true
+secret: false
 canonical_url: "https://christiankohler.net/reactive-angular-with-ngrx-component"
 masterid: 20200322
-excerpt: One step closer to zone-less Angular
-description: One step closer to zone-less Angular
+excerpt: One step closer to a zone-less Angular
+description: One step closer a to zone-less Angular
 tags: angular, rxjs, ngrx
 ---
 
@@ -19,7 +19,7 @@ Angular change detection relies on Zone.js which works well in most situations b
 
 With the rise of reactive programming in Angular we might not need Zone.js at all and instead trigger change detection whenever the view state changes.
 
-[Michael Hladky](https://twitter.com/Michael_Hladky/status/1180316203937681410?ref_src=twsrc%5Etfw) is working on a library named ngrx/component to make it easier to trigger change detection with observables.
+[Michael Hladky](https://twitter.com/Michael_Hladky) and the ngrx team are working on a library named ngrx/component to make it easier to trigger change detection with observables.
 
 In this article we look at how this new library helps us write maintainable code without Zone.js
 
@@ -180,13 +180,13 @@ So we need an async pipe which can trigger change detection. Luckily there is a 
 
 ## ngrx PushPipe and let directive 🚀
 
-[Michael Hladky](https://twitter.com/Michael_Hladky/status/1180316203937681410?ref_src=twsrc%5Etfw) is working on a new library name ngrx/component. It's not released yet but we can already try it out. It's a collection of tools to make it easier to write reactive angular components.
+[Michael Hladky](https://twitter.com/Michael_Hladky) and the ngrx team are working on a new library named ngrx/component. It's not released yet but we can already try it out. It's a collection of tools to make it easier to write reactive angular components.
 
-Or as [Michael Hladky](https://twitter.com/Michael_Hladky/status/1180316203937681410?ref_src=twsrc%5Etfw) says:
+Or as [Michael Hladky](https://twitter.com/Michael_Hladky) says:
 
 > "The idea of ngrx/component is building applications where the word subscribe is not present."
 
-<blockquote class="twitter-tweet"><p lang="en" dir="ltr">In <a href="https://twitter.com/hashtag/rxjs?src=hash&amp;ref_src=twsrc%5Etfw">#rxjs</a> .subscribe() is where reactive programming ends</p>&mdash; Michael Rx Hladky (@Michael_Hladky) <a href="https://twitter.com/Michael_Hladky/status/1180316203937681410?ref_src=twsrc%5Etfw">October 5, 2019</a></blockquote>
+<blockquote class="twitter-tweet"><p lang="en" dir="ltr">In <a href="https://twitter.com/hashtag/rxjs?src=hash&amp;ref_src=twsrc%5Etfw">#rxjs</a> .subscribe() is where reactive programming ends</p>&mdash; Michael Rx Hladky (@Michael_Hladky) <a href="https://twitter.com/Michael_Hladky">October 5, 2019</a></blockquote>
 
 Currently it consists of two features:
 
@@ -260,7 +260,7 @@ If you don't have any problems with Zone.js or performance I would keep Zone.js 
 
 ### Motivation "Zone-less Angular"
 
-You want to get rid of Zone.js and improve performance by only rerendering the current component and its children. A good use case would be Angular Elements. It would simplify the usage of Angular Elements and reduce the bundle size. Ngrx/component is the easiest way to go Zone-less by only replacing the async pipe with the new PushPipe.
+You want to get rid of Zone.js and improve performance by only rerendering the current component and its children. A good use case would be Angular Elements. It would simplify the usage of Angular Elements and reduce the bundle size. Ngrx/component is the easiest way to go Zone-less. Only replace the async pipe with the new PushPipe.
 
 🧨 If you turn off Zone.js, some 3rd party libraries might not work anymore. For example, Angular Material select doesn't work out of the box without Zone.js. Try it out and disable Zone.js [here](https://stackblitz.com/angular/lymrvyjbndk?file=src%2Fmain.ts).
 
@@ -281,6 +281,10 @@ If you are a developer, embrace RxJs and write your code in a reactive way. It w
 If you are a 3rd party library maintainer make sure your library works in a zone-less environment.
 
 If you liked the article 🙌, spread the word and [follow me on twitter](https://twitter.com/KohlerChristian) for more posts on Angular and web technologies.
+
+Huge thanks to [Michael Hladky](https://twitter.com/Michael_Hladky) for his inputs and reviews, and the work he put into ngrx/component.
+
+Did you find typos 🤓? Please help improve the blogpost and open an issue [here](https://github.com/ChristianKohler/homepage)
 
 ## Resources 📚
 
