@@ -23,7 +23,7 @@ With the rise of reactive programming in Angular we might not need Zone.js at al
 
 In this article we look at how this new library helps us write maintainable code without Zone.js
 
-## Toc
+## TOC
 
 1. 🤔 What's wrong with Zone.js?
 2. 🔦 When should we run change detection?
@@ -195,7 +195,7 @@ Currently it consists of two features:
 
 ### PushPipe
 
-The PushPipe is a drop in replacement for the async pipe. **It triggers change detection** in a zone-less context or triggers markForCheck like the async pipe in a zone context.
+The PushPipe is a drop in replacement for the async pipe. **It triggers change detection** in a zone-less context or triggers `markForCheck` like the async pipe in a zone context.
 
 #### Usage
 
@@ -205,7 +205,7 @@ Replace the async pipe:
 {{ count$ | async }}
 ```
 
-with the ngrx push pipe:
+with the ngrx PushPipe:
 
 ```html
 {{ count$ | ngrxPush }}
@@ -239,7 +239,7 @@ width \*ngrxLet:
 
 #### Example
 
-[Here is a Stackblitz example](https://stackblitz.com/edit/blog-pushpipe-example?file=src/app/app.module.ts) with the counter and the let directive. Try it out and replace the ngrxLet with ngif to see how it affects change detection. Also check the [Let directive documentation](https://github.com/ngrx/platform/blob/680f77fbe38c8086f9684f9033d7722b14a78025/projects/ngrx.io/content/guide/component/let.md) for more examples.
+[Here is a Stackblitz example](https://stackblitz.com/edit/blog-pushpipe-example?file=src/app/app.module.ts) with the counter and the let directive. Try it out and replace the ngrxLet with ngIf to see how it affects change detection. Also check the [Let directive documentation](https://github.com/ngrx/platform/blob/680f77fbe38c8086f9684f9033d7722b14a78025/projects/ngrx.io/content/guide/component/let.md) for more examples.
 
 ### How PushPipe and the let-directive improve performance?
 
@@ -274,13 +274,13 @@ The let-directive is also more than just a zone-less ngIf. It seperates the show
 
 ## Be ready for a reactive (zone-less) future 👩‍🚀
 
-Angular makes it easy to write reactive code. Default libraries like the router and the http client provide observables. Ngrx builds on observables. With ngrx/components it gets even easier to write full reactive code. Full reactive code makes it also much easier to know when to trigger change detection and to write zone-less code.
+Angular makes it easy to write reactive code. Default libraries like the router and the http client provide observables. Ngrx builds on observables. With ngrx/component it gets even easier to write full reactive code. Full reactive code makes it also much easier to know when to trigger change detection and to write zone-less code.
 
-If you are a developer, embrace RxJs and write your code in a reactive way. It will make it easier for you to use new features like the PushPipe.
+If you are a developer, embrace RxJS and write your code in a reactive way. It will make it easier for you to use new features like the PushPipe.
 
 If you are a 3rd party library maintainer make sure your library works in a zone-less environment.
 
-If you liked the article 🙌, spread the word and [follow me on twitter](https://twitter.com/KohlerChristian) for more posts on Angular and web technologies.
+If you liked the article 🙌, spread the word and [follow me on Twitter](https://twitter.com/KohlerChristian) for more posts on Angular and web technologies.
 
 Huge thanks to [Michael Hladky](https://twitter.com/Michael_Hladky) for his inputs and reviews, and the work he put into ngrx/component.
 
@@ -288,7 +288,7 @@ Did you find typos 🤓? Please help improve the blogpost and open an issue [her
 
 ## Resources 📚
 
-- [Ngrx component Roadmap](https://github.com/ngrx/platform/issues/2441)
+- [@ngrx/component roadmap](https://github.com/ngrx/platform/issues/2441)
 - [Design Doc - Coalescing of Change Detection - HackMD](https://hackmd.io/42oAMrzYReizA65AwQ7ZlQ)
 - [Design Doc - Push Pipe - HackMD](https://hackmd.io/Uus0vFu3RmWRVGgmtzuUWQ?view)
 - [Design Doc - Let Directive - HackMD](https://hackmd.io/8_3rp0A7RweSYJiulsifbQ?view)
