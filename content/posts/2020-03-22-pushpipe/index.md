@@ -47,7 +47,7 @@ But every design decision has its pros and cons.
 
 - it's hard to debug
 - it might lead to performance issues
-- no async await support
+- no native async await support (Typescript target: ES2017 or higher)
 
 ### Zones.js allows for a mix of imperative and reactive code
 
