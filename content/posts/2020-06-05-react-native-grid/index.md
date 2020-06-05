@@ -10,7 +10,7 @@ canonical_url: "https://christiankohler.net/lessons-learned-from-building-a-grid
 masterid: 20200605
 excerpt: How to build a robust grid list in React Native
 description: How to build a robust grid list in React Native
-tags: react, react-native, flatlist
+tags: react, reactnative, flatlist
 ---
 
 ## tl;dr
