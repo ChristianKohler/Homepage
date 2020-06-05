@@ -15,7 +15,7 @@ tags: react, reactnative, flatlist
 
 ## tl;dr
 
-Use the power of flex-box and aspectRatio to build a dynamic grid which works for all screens and orientations.
+Use the power of flexbox and aspectRatio to build a dynamic grid which works for all screens and orientations.
 
 ## Goal
 
@@ -98,9 +98,9 @@ The result is a nice photo grid that works. [Here is a working example](https://
 
 What I don't like about the solution is that I have to calculate the tile size manually. With my web background I always prefer a fluid solution.
 
-## Set tile size with flex-box
+## Set tile size with flexbox
 
-React Native comes with a great support for flex-box. So let's get rid of the dimension api and replace it with flex-box.
+React Native comes with a great support for flexbox. So let's get rid of the dimension api and replace it with flexbox.
 
 ```jsx
 <Image source={{ uri: item }} style={{ height: 100, flex: 1 }} />
@@ -153,7 +153,7 @@ const numColumns = 4;
 
 ## Summary
 
-Flatlist makes it very easy to build a photo grid with React Native. Flex-box helps to create fluid layouts without the need to know the exact dimensions of the screen.
+Flatlist makes it very easy to build a photo grid with React Native. flexbox helps to create fluid layouts without the need to know the exact dimensions of the screen.
 
 Creating a grid is a very common problem and I hope I could show you an easy and robust way how to do that.
 
