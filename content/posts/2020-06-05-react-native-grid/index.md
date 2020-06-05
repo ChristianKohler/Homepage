@@ -66,7 +66,7 @@ To create a grid from the previous example is straight forward. We only have to 
 <FlatList data={images} renderItem={renderItem} numColumns={4} />
 ```
 
-If you coded along you might have noticed that the screen is now white and no images are displayed. The is because we didn't define a width for the individual items.
+👉 If you coded along you might have noticed that the screen is now white and no images are displayed. The is because we didn't define a width for the individual items.
 
 Let's just add a fixed width for now:
 
