@@ -19,7 +19,7 @@ Use the power of flex-box and aspectRatio to build a dynamic grid which works fo
 
 ## Goal
 
-![](/images/goal.jpg)
+![](./images/goal.jpg)
 
 We want to build a photo grid which is easy to use, supports both portrait and landscape orientation and has configurable columns.
 
@@ -56,7 +56,7 @@ We only need to provide those attributes to make it work:
 
 The result is a list of images with a height of 100 and stretched to full width.
 
-![](/images/simple_example.jpg)
+![](./images/simple_example.jpg)
 
 ## Flatlist with columns
 
@@ -76,7 +76,7 @@ Let's just add a fixed width for now:
 
 The result is a grid. But since the width is fixed to 100 the last image is clipped. [Open in snack.expo.io](https://snack.expo.io/@christiankohler/flatlist_blog_clipped)
 
-![](/images/clipped.jpg)
+![](./images/clipped.jpg)
 
 ## Set tile size with dimension api
 
@@ -94,7 +94,7 @@ const tileSize = screenWidth / numColumns;
 
 The result is a nice photo grid that works. [Here is a working example](https://snack.expo.io/@christiankohler/flatlist_blog_dimension_api)
 
-![](/images/dimension_api.jpg)
+![](./images/dimension_api.jpg)
 
 What I don't like about the solution is that I have to calculate the tile size manually. With my web background I always prefer a fluid solution.
 
@@ -108,7 +108,7 @@ React Native comes with a great support for flex-box. So let's get rid of the di
 
 So my first approach gives me this result. [Live example](https://snack.expo.io/@christiankohler/flatlist_blog_flex_1)
 
-![](/images/flex1.jpg)
+![](./images/flex1.jpg)
 
 There are two problems here:
 
@@ -123,7 +123,7 @@ The aspect ratio problem is easy to fix. Just remove the height property and def
 <Image source={{ uri: item }} style={{ aspectRatio: 1, flex: 1 }} />
 ```
 
-![](/images/aspect_ratio.jpg)
+![](./images/aspect_ratio.jpg)
 
 [Live example](https://snack.expo.io/@christiankohler/flatlist_blog_aspect_ratio) (Make sure you run it in the simulator since the web view doesn't support the aspectRatio property)
 
@@ -147,7 +147,7 @@ const numColumns = 4;
 />;
 ```
 
-![](/images/num_columns.jpg)
+![](./images/num_columns.jpg)
 
 [Here is a live example](https://snack.expo.io/@christiankohler/flatlist_blog_num_columns) (Make sure you run it in the simulator since the web view doesn't support the aspectRatio property)
 
