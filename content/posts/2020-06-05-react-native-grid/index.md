@@ -35,9 +35,7 @@ This is a full app example how to use a Flatlist. [Try it out on expo.io](https:
 import * as React from "react";
 import { Image, FlatList } from "react-native";
 
-const picsumImages = Array.from(Array(11).keys()).map(
-  () => `https://loremflickr.com/320/240`
-);
+const picsumImages = new Array(11).fill("http://placeimg.com/640/360/any");
 
 function renderItem({ item }) {
   return <Image source={{ uri: item }} style={{ height: 100 }} />;
@@ -167,9 +165,7 @@ Did you find typos 🤓? Please help improve the blogpost and open an issue [her
 import * as React from "react";
 import { Image, FlatList, Dimensions } from "react-native";
 
-const picsumImages = Array.from(Array(11).keys()).map(
-  () => `https://loremflickr.com/320/240`
-);
+const picsumImages = new Array(11).fill("http://placeimg.com/640/360/any");
 
 const numColumns = 4;
 
