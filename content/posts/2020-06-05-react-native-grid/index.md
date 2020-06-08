@@ -4,8 +4,8 @@ author: Chris Kohler
 date: "2020-06-05"
 hero: "./images/hero.jpg"
 cover_image: "./images/hero.jpg"
-published: false
-secret: true
+published: true
+secret: false
 canonical_url: "https://christiankohler.net/lessons-learned-from-building-a-grid-list-in-react-native"
 masterid: 20200605
 excerpt: How to build a robust grid list in React Native
