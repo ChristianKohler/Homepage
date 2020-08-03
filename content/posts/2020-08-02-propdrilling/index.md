@@ -6,7 +6,7 @@ hero: "./images/hero.jpg"
 cover_image: "./images/hero.jpg"
 published: true
 secret: false
-canonical_url: "https://christiankohler.net/it-s-a-trap-the-biggest-pitfall-of-string-prototype-replace"
+canonical_url: "https://christiankohler.net/how-to-avoid-prop-drilling-in-angular"
 masterid: 20200802
 excerpt: How to avoid Prop-drilling in Angular, or how to apply the idea of React Context to Angular.
 description: How to avoid Prop-drilling in Angular, or how to apply the idea of React Context to Angular.
