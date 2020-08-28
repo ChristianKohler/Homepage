@@ -17,6 +17,6 @@ jobs:
         with:
           node-version: ${{ matrix.node-version }}
       - name: Publish Blog with Papertown
-        uses: ChristianKohler/papertown-github-action@v1.0.3
+        uses: ChristianKohler/papertown-github-action@v1.0.4
         with: 
           devto-api-key: ${{ secrets.DEVTO_API_KEY }}
