@@ -8,8 +8,8 @@ published: false
 secret: true
 canonical_url: "https://christiankohler.net/bundling-angular-modules"
 masterid: 20210122
-excerpt: What you need to know about NgModules in the ivy world.
-description: What you need to know about NgModules in the ivy world.
+excerpt: What you need to know about NgModules in the Ivy world.
+description: What you need to know about NgModules in the Ivy world.
 tags: angular, javascript, performance
 ---
 
