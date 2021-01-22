@@ -16,8 +16,7 @@ jobs:
         uses: actions/setup-node@v1
         with:
           node-version: ${{ matrix.node-version }}
-      - name: papertown
-        run: |
-          npx papertown sync --devtoApiKey ${{ secrets.DEVTO_API_KEY }}
-        env:
-          CI: true
+      - name: Publish Blog with Papertown
+        uses: ChristianKohler/papertown-github-action@v1.0.4
+        with: 
+          devto-api-key: ${{ secrets.DEVTO_API_KEY }}
