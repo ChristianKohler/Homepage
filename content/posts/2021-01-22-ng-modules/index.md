@@ -33,7 +33,6 @@ With the recent updates, especially with Ivy, NgModules became less intrusive an
 - There are two types of NgModules: Eagerly loaded and lazy loaded modules
 - Eagerly loaded modules are always bundled in the main bundle
 - Lazy loaded modules have their own bundle file
-- Shared modules are optimised and bundled with the best available bundle
 
 ## Why do we need NgModules?
 
@@ -99,7 +98,7 @@ With that, Angular makes sure that:
 ### Other use cases
 
 - The AppModule is also responsible to define how the application is bootstrapped.
-- Even though most providers nowadays can be defined without NgModules it is still a solution for more complex scenarios.
+- Even though nowadays most providers/services can be defined without NgModules it is still a solution for more complex scenarios.
 - In pre-Ivy applications, entryComponents needed to be defined. Not required anymore in the Ivy-world.
 - Additional schemas can be defined. For example to use custom elements with Angular
 
@@ -114,7 +113,7 @@ Angular knows two kind of NgModules:
 - Eagerly loaded modules
 - Lazy loaded modules.
 
-The AppModule is always loaded eagerly and lazy modules can be loaded when we navigate to a lazy route. That way the browser doesn't need to load the full application initially.
+The AppModule is always loaded eagerly. Lazy modules can be loaded when we navigate to a lazy route. That way the browser doesn't need to load the full application initially.
 
 The way we define NgModules has an affect on the resulting JavaScript bundle files.
 
@@ -183,4 +182,4 @@ NgModules are required to register components, directives and pipes. All eagerly
 
 If you liked the article 🙌, spread the word and [follow me on Twitter](https://twitter.com/KohlerChristian) for more posts on web technologies.
 
-Did you find typos 🤓? Please help improve the blogpost and open an issue [here](https://github.com/ChristianKohler/homepage)
+Did you find typos 🤓? Please help improve the blogpost and open a pull request [here](https://github.com/ChristianKohler/homepage)
