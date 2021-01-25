@@ -95,6 +95,8 @@ With that, Angular makes sure that:
 1. The component is included in the bundle since it is referenced
 2. The component template can compile it's child components
 
+If you want to go more into detail, here is a working example of an Angular app without NgModules and with the directives array to register components: https://stackblitz.com/edit/example-ng-without-modules
+
 ### Other use cases
 
 - The AppModule is also responsible to define how the application is bootstrapped.
