@@ -15,7 +15,9 @@ tags: angular, javascript, performance
 
 # Bundling Angular Modules
 
-NgModules are controversial. They make it harder getting started with Angular. They might become [optional in the future](https://angular.io/guide/roadmap#simplified-angular-mental-model-with-optional-ngmodules). But today they are here and it is helpful to understand how they work and how you can use them to write modular and performant applications. With the recent updates, especially with Ivy, NgModules became less intrusive and easier to use. In this blogpost I want to give you an overview what you need to know about NgModules in the Ivy world.
+NgModules are controversial. They make it harder getting started with Angular. They might become [optional in the future](https://angular.io/guide/roadmap#simplified-angular-mental-model-with-optional-ngmodules). But today they are here and it is helpful to understand how they work and how you can use them to write modular and performant applications.
+
+With the recent updates, especially with Ivy, NgModules became less intrusive and easier to use. In this blogpost I want to give you an overview what you need to know about NgModules in the Ivy world.
 
 ## Table of Contents
 
