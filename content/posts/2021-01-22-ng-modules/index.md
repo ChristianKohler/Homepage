@@ -157,6 +157,8 @@ That way the module is only loaded when the user navigates to this page. Angular
 
 ### Shared modules
 
+Shared modules are NgModules which declare and export some components / directives / pipes or services. We could also say it's a small library.
+
 If a shared module is only imported in a lazy loaded module, it is bundled in the lazy bundle.
 
 ![](./images/5.png)
