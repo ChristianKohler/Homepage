@@ -74,7 +74,7 @@ export class ComponentB {}
 export class MyModule {}
 ```
 
-The Angular compiler uses that information and adds all registered components which are used to the component definition. Actually the directives array in the compiled component looks somehow similar to Vue's approach with the components definition.
+The Angular compiler uses that information and adds all registered components which are used to the component definition. Actually, the directives array in the compiled component looks somehow similar to Vue's approach with the components definition.
 
 In a simplified example, ComponentB would be compiled to this:
 
@@ -93,7 +93,7 @@ ComponentB["ɵcmp"] = ɵɵdefineComponent({
 With that, Angular makes sure that:
 
 1. The component is included in the bundle since it is referenced
-2. The component template can compile it's child components
+2. The component template can compile its child components
 
 If you want to go more into detail, here is a working example of an Angular app without NgModules and with the directives array to register components: https://stackblitz.com/edit/example-ng-without-modules
 
@@ -102,11 +102,11 @@ If you want to go more into detail, here is a working example of an Angular app 
 - The AppModule is also responsible to define how the application is bootstrapped.
 - Even though nowadays most providers/services can be defined without NgModules it is still a solution for more complex scenarios.
 - In pre-Ivy applications, entryComponents needed to be defined. Not required anymore in the Ivy-world.
-- Additional schemas can be defined. For example to use custom elements with Angular
+- Additional schemas can be defined. For example to use custom elements with Angular.
 
 ## How small / big should a module be?
 
-Without thinking about bundle optimisation and test isolation, it's totally up to your preference. You can define a NgModule per component or have a bigger module for many components. Both ways are totally fine.
+Without thinking about bundle optimisation and test isolation, it is totally up to your preference. You can define a NgModule per component or have a bigger module for many components. Both ways are totally fine.
 
 ## How modules are bundled
 
@@ -117,7 +117,7 @@ Angular knows two kind of NgModules:
 
 The AppModule is always loaded eagerly. Lazy modules can be loaded when we navigate to a lazy route. That way the browser doesn't need to load the full application initially.
 
-The way we define NgModules has an affect on the resulting JavaScript bundle files.
+The way we define NgModules affects the resulting JavaScript bundle files.
 
 Let's have a closer look.
 
@@ -129,7 +129,7 @@ If you don't declare a component in a NgModule, the component is not bundled. Lu
 
 ### Most simple example
 
-The most simple example is a single module and a single component declared. In that case, as you would expect, the component is bundled in the main JavaScript bundle.
+The simplest example is a single module declaring a single component. In that case, as you would expect, the component is bundled in the main JavaScript bundle.
 
 ![](./images/2.png)
 
@@ -159,7 +159,7 @@ That way the module is only loaded when the user navigates to this page. Angular
 
 ### Shared modules
 
-Shared modules are NgModules which declare and export some components / directives / pipes or services. We could also say it's a small library.
+Shared modules are NgModules which declare and export some components / directives / pipes or services. We could also say it is a small library.
 
 If a shared module is only imported in a lazy loaded module, it is bundled in the lazy bundle.
 
@@ -178,7 +178,7 @@ If the shared module is imported in two lazy loaded modules (but not in an eager
 As you can see, Angular is very clever to split the application in multiple bundles. What you need to know though:
 
 - If you import a module, all components are bundled, even if not all are used.
-- The smaller the modules the better Angular can optimise the bundles
+- The smaller the modules the better Angular can optimise the bundles.
 
 ## Summary
 
@@ -186,4 +186,4 @@ NgModules are required to register components, directives and pipes. All eagerly
 
 If you liked the article 🙌, spread the word and [follow me on Twitter](https://twitter.com/KohlerChristian) for more posts on web technologies.
 
-Did you find typos 🤓? Please help improve the blogpost and open a pull request [here](https://github.com/ChristianKohler/homepage)
+Did you find typos 🤓? Please help improve the blogpost and open a pull request [here](https://github.com/ChristianKohler/homepage).
