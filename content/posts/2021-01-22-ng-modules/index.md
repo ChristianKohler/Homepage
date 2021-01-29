@@ -23,6 +23,7 @@ With the recent updates, especially with Ivy, NgModules became less intrusive an
 
 - Tldr;
 - Why do we need NgModules?
+- How to make a component available in a NgModule
 - How small / big should a module be?
 - How modules are bundled
 - Summary
@@ -104,9 +105,46 @@ If you want to go more into detail, here is a working example of an Angular app 
 - In pre-Ivy applications, entryComponents needed to be defined. Not required anymore in the Ivy-world.
 - Additional schemas can be defined. For example to use custom elements with Angular.
 
-## How small / big should a module be?
+## How to make a component available in a NgModule
 
-Without thinking about bundle optimisation and test isolation, it is totally up to your preference. You can define a NgModule per component or have a bigger module for many components. Both ways are totally fine.
+As we now learned, by declaring a component in a NgModule, we make it available to use in other components.
+
+Let's have a closer look how we can make components available in different NgModules.
+
+### Directly declare it
+
+![](./images/9.png)
+
+This is the easiest way to make a component available within a NgModule.
+
+### Import it from a different NgModule
+
+Let's say the component is declared in a different NgModule (e.g. "MyComponents") and we want to use it in "MyModule". We need to do two things:
+
+1. Export the component to make it available for other components (think of it as public components)
+2. Import the NgModule (e.g. "MyComponents") in "MyModule"
+
+If you only import the NgModule without exporting the component, the component is not available in the other module:
+
+![](./images/10.png)
+
+That is why you have to make sure to also export components you want to make "public".
+
+![](./images/11.png)
+
+A common question is:
+
+> Can I import my component library module in the main NgModule and then use the components in all feature modules?
+
+Answer is no. You have to explicitly import the component library module in every feature module.
+
+![](./images/12.png)
+
+That brings up the question:
+
+> Will it have an impact on the bundle size if I import a NgModule in every feature module?
+
+Short answer is no. But let's have a closer look in "How modules are bundled".
 
 ## How modules are bundled
 
@@ -179,6 +217,10 @@ As you can see, Angular is very clever to split the application in multiple bund
 
 - If you import a module, all components are bundled, even if not all are used.
 - The smaller the modules the better Angular can optimise the bundles.
+
+## How small / big should a module be?
+
+Without thinking about bundle optimisation and test isolation, it is totally up to your preference. You can define a NgModule per component or have a bigger module for many components. Both ways are totally fine.
 
 ## Summary
 
