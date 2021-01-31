@@ -35,6 +35,10 @@ With the recent updates, especially with Ivy, NgModules became less intrusive an
 - Eagerly loaded modules are always bundled in the main bundle
 - Lazy loaded modules have their own bundle file
 
+## Note
+
+Most of the learnings in this blog post apply not only to components but to directives and pipes as well. I use components as a drop in replacement for components/directives/pipes to keep it simple.
+
 ## Why do we need NgModules?
 
 With Ivy, one of the main reasons we need NgModules is to register components, directives and pipes.
