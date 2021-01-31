@@ -140,7 +140,7 @@ This is the easiest way to make a component available within a NgModule.
 
 Let's say the component is declared in a different NgModule (e.g. "MyComponents") and we want to use it in "MyModule". We need to do two things:
 
-1. Export the component to make it available for other components (think of it as public components)
+### 1. Export the component to make it available for other components (think of it as public components)
 
 ```typescript
 @Component({
@@ -156,7 +156,7 @@ export class MyComponent {}
 export class MyComponents {}
 ```
 
-2. Import the NgModule (e.g. "MyComponents") in "MyModule"
+#### 2. Import the NgModule (e.g. "MyComponents") in "MyModule"
 
 ```typescript
 @NgModule({
