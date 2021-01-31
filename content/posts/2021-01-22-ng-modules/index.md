@@ -24,8 +24,8 @@ With the recent updates, especially with Ivy, NgModules became less intrusive an
 - Tldr;
 - Why do we need NgModules?
 - How to make a component available in a NgModule
-- How small / big should a module be?
 - How modules are bundled
+- Best practices
 - Summary
 
 ## Tldr;
@@ -37,7 +37,9 @@ With the recent updates, especially with Ivy, NgModules became less intrusive an
 
 ## Why do we need NgModules?
 
-With Ivy, one of the main reasons we need NgModules is to register components, directives and pipes. When Angular parses a template it needs to know how to compile a component.
+With Ivy, one of the main reasons we need NgModules is to register components, directives and pipes.
+
+When Angular parses a template and sees a custom tag/element (e.g. `<component-a></component-a>`), the parser looks for a registered angular component which matches the selector.
 
 Every framework has this challenge. React uses JSX, Vue solves it with a components property on the component:
 
@@ -61,7 +63,7 @@ Angular solves it with the declaration property on @NgModules:
   selector: "component-a",
   template: "hello"
 })
-export class ComponentB {}
+export class ComponentA {}
 
 @Component({
   selector: "component-b",
@@ -115,6 +117,19 @@ Let's have a closer look how we can make components available in different NgMod
 
 ![](./images/9.png)
 
+```typescript
+@Component({
+  selector: "my-component",
+  template: "hello"
+})
+export class MyComponent {}
+
+@NgModule({
+  declarations: [MyComponent]
+})
+export class MyModule {}
+```
+
 This is the easiest way to make a component available within a NgModule.
 
 ### Import it from a different NgModule
@@ -122,7 +137,30 @@ This is the easiest way to make a component available within a NgModule.
 Let's say the component is declared in a different NgModule (e.g. "MyComponents") and we want to use it in "MyModule". We need to do two things:
 
 1. Export the component to make it available for other components (think of it as public components)
+
+```typescript
+@Component({
+  selector: "my-component",
+  template: "hello"
+})
+export class MyComponent {}
+
+@NgModule({
+  declarations: [MyComponent],
+  exports: [MyComponent]
+})
+export class MyComponents {}
+```
+
 2. Import the NgModule (e.g. "MyComponents") in "MyModule"
+
+```typescript
+@NgModule({
+  ...
+  imports: [MyComponents]
+})
+export class MyModule {}
+```
 
 If you only import the NgModule without exporting the component, the component is not available in the other module:
 
@@ -218,9 +256,11 @@ As you can see, Angular is very clever to split the application in multiple bund
 - If you import a module, all components are bundled, even if not all are used.
 - The smaller the modules the better Angular can optimise the bundles.
 
-## How small / big should a module be?
+## Best practices
 
-Without thinking about bundle optimisation and test isolation, it is totally up to your preference. You can define a NgModule per component or have a bigger module for many components. Both ways are totally fine.
+So now we know why and how components are bundled. But we don't now when to create a module. Should you make small or big bundles? What are the best practices?
+
+There is no simple answer to those questions. This is why I will create a follow up post where I try to answer those questions. Stay tuned ;-)
 
 ## Summary
 
