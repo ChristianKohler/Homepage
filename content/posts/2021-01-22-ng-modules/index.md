@@ -86,11 +86,11 @@ The Angular compiler uses that information and adds all registered components wh
 In a simplified example, ComponentB would be compiled to this:
 
 ```typescript
-// template: <component-a></component-a>
 class ComponentB {}
 
 ComponentB["ɵcmp"] = ɵɵdefineComponent({
   template: function(rf, ctx) {
+    // template: <component-a></component-a>
     ɵɵelement(0, "component-a");
   },
   directives: [ComponentA] // <- register ComponentA
