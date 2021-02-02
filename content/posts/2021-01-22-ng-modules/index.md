@@ -4,8 +4,8 @@ author: Chris Kohler
 date: "2021-01-22"
 hero: "./images/hero.jpg"
 cover_image: "./images/hero.jpg"
-published: false
-secret: true
+published: true
+secret: false
 canonical_url: "https://christiankohler.net/bundling-angular-modules"
 masterid: 20210122
 excerpt: What you need to know about NgModules in the Ivy world.
