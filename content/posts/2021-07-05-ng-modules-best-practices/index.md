@@ -2,8 +2,8 @@
 title: "Angular Modules Best Practices 2021"
 author: Chris Kohler
 date: "2021-07-05"
-hero: "./images/hero.jpg"
-cover_image: "./images/hero.jpg"
+hero: "./images/hero2.jpg"
+cover_image: "./images/hero2.jpg"
 published: false
 secret: true
 canonical_url: "https://christiankohler.net/angular-modules-best-practices-2021"
@@ -104,7 +104,7 @@ There are 3 strategies I want to have a closer look at today:
 - One module per feature / view (Lazy Load)
 - One module per component (SCAM)
 
-![](./images/patters-overview.png)
+![](./images/patters-overview2.png)
 
 All strategies have their pros and cons. The radar chart compares the different approaches visually.
 
