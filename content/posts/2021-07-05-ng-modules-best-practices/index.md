@@ -94,6 +94,8 @@ There are a few aspects we should consider when deciding on one or the other app
 
 **Boilerplate** How much boilerplate do we need for our Angular modules? The more modules the more boilerplate. This can usually be resolved by generating boilerplate with a CLI or an IDE.
 
+**Testabilty** How easy is it to test a single component? If the component is part of a large module, we may have to mock many services.
+
 ### Strategies
 
 There are 3 strategies I want to have a closer look at today:
@@ -128,7 +130,7 @@ Another benefit of this approach is that Angular can build the optimal bundles f
 
 And last but not least, the rule is very simple: Every component has its module. That’s it, no discussions about how to slice the modules.
 
-The only downside I see is that it adds some boilerplate since we have more module definitions and we have to import all dependencies explicitly.
+The only downside I see is that it adds some boilerplate since we have more module definitions and we have to import all dependencies explicitly. But that might change in the future with a new API on the @Component decorator which allows standalone components (without NgModules). For more on that, you can follow that [spike on Github](https://github.com/angular/angular/pull/42831).
 
 **One module per feature / view (Lazy Load)** is probably the most common pattern.
 
@@ -152,7 +154,7 @@ Going with the classic feature/view module approach is still my go-to approach a
 
 If you build a library, the SCAM strategy is perfect since it allows the library consumer to only import the components they use. It is also good if you have difficulties defining a good strategy due to its simple rules.
 
-Both SCAM and the classic feature/view module approach result in the same bundle structure. So both are very good from a performance perspective.
+Both SCAM and the classic feature/view module approach result in the same bundle structure. So both are very good from a performance perspective. However, this is only the case as long as we do not accidentally import a feature module in the app or core module, which does not happen with SCAM.
 
 ## Summary
 
