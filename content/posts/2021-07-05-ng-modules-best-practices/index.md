@@ -4,8 +4,8 @@ author: Chris Kohler
 date: "2021-07-05"
 hero: "./images/hero2.jpg"
 cover_image: "./images/hero2.jpg"
-published: false
-secret: true
+published: true
+secret: false
 canonical_url: "https://christiankohler.net/angular-modules-best-practices-2021"
 masterid: 20210705
 excerpt: Best practices how to bundle your application with Angular modules
