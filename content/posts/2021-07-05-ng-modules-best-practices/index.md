@@ -140,7 +140,7 @@ We get the optimal bundle size when we load all the view lazy. Since the shared 
 
 This pattern is somewhere in the middle of the two other approaches. We get small bundle sizes with little boilerplate and we still have a clear structure.
 
-If your application is larger you can also split the modules again into smaller feature modules or bundle views together into bigger feature bundles. This can either help you organize your code or lead to confusion on when to create those sub-modules. Angular official [documentation](https://angular.io/guide/module-types) is a good read to learn more about this pattern.
+If your application is larger you can also split the modules again into smaller feature modules or bundle views together into bigger feature bundles. This can either help you organize your code or lead to confusion on when to create those sub-modules. Angulars official [documentation](https://angular.io/guide/module-types) is a good read to learn more about this pattern.
 
 ## How to decide what pattern to use?
 
