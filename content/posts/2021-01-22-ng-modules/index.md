@@ -37,7 +37,7 @@ With the recent updates, especially with Ivy, NgModules became less intrusive an
 
 ## Note
 
-Most of the learnings in this blog post apply not only to components but to directives and pipes as well. I use components as a drop in replacement for components/directives/pipes to keep it simple.
+Most of the learnings in this blog post apply not only to components but to directives and pipes as well. I use components as a drop in replacement for components/directives/pipes to keep it simple. For services I can recommend this [blogpost](https://juristr.com/blog/2021/04/angular-di-and-lazy-modules/) from Juri.
 
 ## Why do we need NgModules?
 
