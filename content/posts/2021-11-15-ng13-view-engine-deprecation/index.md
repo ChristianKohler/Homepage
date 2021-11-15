@@ -40,7 +40,7 @@ If you are a **library developer**, the recommended way of publishing since vers
 
 ### Next Milestone to "Ivy Everywhere"
 
-Angular is transitioning its rendering engine. Away from View Engine over to Ivy. With Angular 13 we hit an important milestone of this transition with the removal of ViewEngine.
+Angular is transitioning its rendering engine. Away from View Engine over to Ivy. With Angular 13 we hit an important milestone of this transition with the removal of View Engine.
 
 This process started with an Ivy preview in version 8 and Ivy as the default rendering engine with version 9.
 
@@ -60,7 +60,7 @@ For library developers, especially the ones who publish to npm, the goal was alw
 
 ![](./images/libraries.jpg)
 
-With Angular 13, it is not possible to publish in the ViewEngine format anymore. Library developers have now two options to publish:
+With Angular 13, it is not possible to publish in the View Engine format anymore. Library developers have now two options to publish:
 
 - Partial Ivy
 - Full Ivy
@@ -77,13 +77,13 @@ Fully compiled Ivy code. Not recommended when publishing the library. Use it in 
 
 ## FAQ
 
-### What is the impact of changing from ViewEngine to Ivy?
+### What is the impact of changing from View Engine to Ivy?
 
-The ViewEngine format is compatible with both, ViewEngine and Ivy apps. Ivy apps require ngcc to make it work though.
+The View Engine format is compatible with both, View Engine and Ivy apps. Ivy apps require ngcc to make it work though.
 
-Changing to partial-ivy makes your library incompatible with ViewEngine apps. And that is ok! App developers had almost 2 years to migrate to ivy and therefore most applications nowadays use ivy. Minko gives a good overview in [this blog](https://blog.angular.io/upcoming-improvements-to-angular-library-distribution-76c02f782aa4) post how most applications use ivy today.
+Changing to "Partial Ivy" makes your library incompatible with View Engine apps. And that is ok! App developers had almost 2 years to migrate to ivy and therefore most applications nowadays use ivy. Minko gives a good overview in [this blog](https://blog.angular.io/upcoming-improvements-to-angular-library-distribution-76c02f782aa4) post how most applications use ivy today.
 
-The advantage of publishing with Ivy is that application developers don’t have to run ngcc anymore (given that all the libraries they depend on changed from ViewEngine to Ivy) 🎉
+The advantage of publishing with Ivy is that application developers don’t have to run ngcc anymore (given that all the libraries they depend on changed from View Engine to Ivy) 🎉
 
 ### How to set the format for a library?
 
