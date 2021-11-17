@@ -81,7 +81,7 @@ Fully compiled Ivy code. Not recommended when publishing the library. Use it in 
 
 The View Engine format is compatible with both, View Engine and Ivy apps. Ivy apps require ngcc to make it work though.
 
-Changing to "Partial Ivy" makes your library incompatible with View Engine apps. And that is ok! App developers had almost 2 years to migrate to ivy and therefore most applications nowadays use ivy. Minko gives a good overview in [this blog](https://blog.angular.io/upcoming-improvements-to-angular-library-distribution-76c02f782aa4) post how most applications use ivy today.
+Changing to "Partial Ivy" makes your library incompatible with View Engine apps. And that is ok! App developers had almost 2 years to migrate to Ivy and therefore most applications nowadays use Ivy. Minko gives a good overview in [this blog](https://blog.angular.io/upcoming-improvements-to-angular-library-distribution-76c02f782aa4) post how most applications use Ivy today.
 
 The advantage of publishing with Ivy is that application developers don’t have to run ngcc anymore (given that all the libraries they depend on changed from View Engine to Ivy) 🎉
 
