@@ -1,12 +1,12 @@
 ---
-title: "Angular 13 View Engine Deprecation"
+title: "Angular View Engine was removed - What you need to know"
 author: Chris Kohler
-date: "2021-07-05"
+date: "2021-11-15"
 hero: "./images/hero.png"
 cover_image: "./images/hero.png"
-published: false
-secret: true
-canonical_url: "https://christiankohler.net/angular-13-view-engine-deprecation"
+published: true
+secret: false
+canonical_url: "https://christiankohler.net/angular-view-engine-was-removed-what-you-need-to-know"
 masterid: 20211115
 excerpt: What does the deprecation of the View Engine in Angular 13 mean for you?
 description: What does the deprecation of the View Engine in Angular 13 mean for you?
