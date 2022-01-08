@@ -1,0 +1,37 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  body {
+    @apply bg-neutral-50;
+  }
+  h1 {
+    @apply text-3xl mb-8 mt-16 font-semibold;
+  }
+  h2 {
+    @apply text-2xl mb-7 mt-14 font-bold;
+  }
+  h3 {
+    @apply text-lg mb-4 mt-8 font-semibold;
+  }
+  a {
+    @apply text-blue-600;
+  }
+  ul,
+  ol {
+    @apply list-disc list-inside;
+  }
+  p {
+    @apply mb-8;
+  }
+  blockquote {
+    @apply p-4 my-8 border-l-4 border-gray-300 font-serif;
+  }
+  blockquote p {
+    @apply mb-0;
+  }
+  pre {
+    @apply rounded-lg;
+  }
+}
