@@ -1,31 +1,20 @@
-import { GetStaticProps, GetStaticPaths } from "next";
-import Image from "next/image";
+import { BlogContainer } from "@components/blog-container";
+import { BlogHeader } from "@components/blog-header";
+import { GetStaticPaths, GetStaticProps } from "next";
+import { MDXRemote } from "next-mdx-remote";
+import Head from "next/head";
 import path from "path";
 import { getPostData, getSortedPostsData, Post } from "../lib/read-posts";
-import { MDXRemote } from "next-mdx-remote";
-import { BlogContainer } from "@components/blog-container";
-import Head from "next/head";
-import { BlogHeader } from "@components/blog-header";
 
 export default function Blogpost({ postData }: { postData: Post }) {
   const mdxComponents = {
     img: ({ src, alt }) => {
-      return (
-        <img
-          alt={alt}
-          src={"/" + postData.foldername + src.replace("./", "/")}
-        />
-      );
+      return <img alt={alt} src={fixHrefAndSrc(src, postData)} />;
     },
     a: ({ href, children }) => {
       const isPDF = href.endsWith(".pdf");
       return (
-        <a
-          href={
-            isPDF ? "/" + postData.foldername + href.replace("./", "/") : href
-          }
-          target="_blank"
-        >
+        <a href={isPDF ? fixHrefAndSrc(href, postData) : href} target="_blank">
           {children}
         </a>
       );
@@ -70,4 +59,8 @@ async function getAllPostIds() {
       id: post.slug,
     },
   }));
+}
+
+function fixHrefAndSrc(url: string, postData: Post) {
+  return "/" + postData.foldername + url.replace("./", "/");
 }
