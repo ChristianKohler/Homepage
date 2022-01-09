@@ -7,7 +7,7 @@
   },
   "scripts": {
     "dev": "next dev",
-    "prebuild": "rsync -avm --include='*.jpg' --include='*.png' --include='*.svg' -f 'hide,! */' ./posts/ ./public",
+    "prebuild": "rsync -avm --include='*.jpg' --include='*.png' --include='*.svg' --include='*.pdf' -f 'hide,! */' ./posts/ ./public",
     "build": "next build",
     "export": "next export",
     "test": "vitest run",

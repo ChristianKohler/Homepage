@@ -17,6 +17,19 @@ export default function Blogpost({ postData }: { postData: Post }) {
         />
       );
     },
+    a: ({ href, children }) => {
+      const isPDF = href.endsWith(".pdf");
+      return (
+        <a
+          href={
+            isPDF ? "/" + postData.foldername + href.replace("./", "/") : href
+          }
+          target="_blank"
+        >
+          {children}
+        </a>
+      );
+    },
   };
 
   return (

@@ -34,3 +34,4 @@ yarn-error.log*
 
 # Ignore copied images
 public/**/images/* 
+public/**/*.pdf
