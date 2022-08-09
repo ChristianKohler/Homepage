@@ -2,10 +2,10 @@
 title: "Computed Properties in Angular"
 author: Chris Kohler
 date: "2022-07-29"
-hero: "./images/hero.jpg"
-cover_image: "./images/hero.jpg"
-published: false
-secret: true
+hero: "./images/hero.png"
+cover_image: "./images/hero.png"
+published: true
+secret: false
 canonical_url: "https://christiankohler.net/computed-properties-in-angular"
 masterid: 20220729
 excerpt: All you need to know about computed properties in Angular
@@ -149,10 +149,10 @@ export class TodoStatsComponent implements OnChanges {
 
 `ngOnChanges` is triggered when an `@Input` changes. Whenever this happens we make sure to update the done count.
 
-This approach is simple and easy to understand. But only for small examples like this one. When the component grows, it is more difficult to see how the `done` property depends on `ngOnChanges`. This approach can also be error-prone since we have to always remember to update the `done` property whenever we change the `todos`. I try to avoid this approach.
+This approach is simple and easy to understand. But only for small examples like this one. When the component grows, it is more difficult to see how the `done` property depends on `ngOnChanges`. This approach can also be error-prone since we have to always remember to update the `done` property whenever we change the `todos`. I try to avoid this approach for derived state.
 
 - ✅ Simple and easy to understand
-- ⚠️ Can be error-prone with a more complex component
+- ⚠️ Can be error-prone with a more complex components
 
 ### Approach with a getter
 
@@ -229,7 +229,7 @@ export class TodoStatsComponent {
 }
 ```
 
-The reactive approach. For this simple example may be overengineered but very powerful and can make a lot of sense for more complex situations. This is also my go-to solution if I am already in the RxJS world.
+The reactive approach. This is my go-to solution if I am already in the RxJS world. Very powerful with many operators out of the box. For our simple example it might be overengineered but for more complex logic RxJS helps a lot to write clean code.
 
 - ✅ Recommended when part of the state is already in the RxJS world (observables)
 - ✅ Very powerful with many operators out of the box
@@ -259,7 +259,9 @@ export class TodoStatsComponent {
 }
 ```
 
-Bonus approach. I see this approach as a variant of the RxJS approach. If you often use the RxJS approach, using the `ngrx/component-store` library can be a nice addition. You can start with a generic store like I do in this example. When you see the component gets too complex, it is easy to extract the store and define selectors in the store instead of in the component itself.
+Bonus approach. I see this approach as a variant of the RxJS approach. If you often use the RxJS approach, using the `ngrx/component-store` library can be a nice addition. ComponentStore is a standalone library that helps to manage local/component state and comes with methods like. `setState` or `select`.
+
+You can start with a generic store like I do in this example. When you see the component gets too complex, it is easy to extract the store and define selectors in the store instead of in the component itself.
 
 - ✅ Recommended as an alternative to the RxJS approach
 - ✅ Nice refactor options
@@ -274,6 +276,8 @@ Here is how I choose between the approaches.
 1. If I am not using observables I either use the `getter` or `pipe` approach.
 2. If I am already using observables in a component, I stay in the RxJS world with either pure RxJS or ngrx/component-store.
 3. I rarely use `ngOnChanges` to update derived state.
+
+Do you have another approach? Let me know on [Twitter](https://twitter.com/KohlerChristian)
 
 ## Spread the word
 
