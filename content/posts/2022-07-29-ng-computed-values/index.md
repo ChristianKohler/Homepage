@@ -207,6 +207,43 @@ I like this approach for the very clear separation of concerns. Another plus is 
 - ✅ Clear separation
 - ✅ Build in cache (pure pipes)
 
+### Approach with a generic Angular Pipe
+
+The approach with an Angular pipe has the disadvantage that we need to write a new pipe for every filter. This results in quite some boilerplate. 
+
+Another option is to create a generic `FilterPipe`:
+
+```typescript
+@Pipe({ name: 'filter' })
+export class FilterPipe implements PipeTransform {
+  transform(array: any[], predicate: (value: any) => any): any {
+    return array.filter(predicate);
+  }
+}
+```
+
+This pipe can then be used with any filter predicate:
+
+```typescript
+@Component({
+  template: `
+    Todos done: {{ (todos | filter: byDone).length }}
+  `,
+  selector: 'todo-stats'
+})
+export class TodoStatsComponent {
+  @Input() todos: Todo[] = [];
+
+  byDone = (todo: Todo) => todo.done
+}
+```
+
+Thank you @NetanelBasal for the [inspiration](https://twitter.com/netanelbasal/status/1556926454922989569?s=21&t=Xrjv7_Yvn7YThhJK0zVE0Q). I really like the idea. Keeps the component code very readable.
+
+- ✅ Readability
+- ✅ Build in cache (pure pipes)
+- ✅ Can be combined with other pipes
+
 ### Approach with RxJS
 
 ```typescript
