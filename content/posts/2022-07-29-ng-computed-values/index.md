@@ -149,9 +149,10 @@ export class TodoStatsComponent implements OnChanges {
 
 `ngOnChanges` is triggered when an `@Input` changes. Whenever this happens we make sure to update the done count.
 
-This approach is simple and easy to understand. But only for small examples like this one. When the component grows, it is more difficult to see how the `done` property depends on `ngOnChanges`. This approach can also be error-prone since we have to always remember to update the `done` property whenever we change the `todos`. I try to avoid this approach for derived state.
+This approach is simple and easy to understand. But only for small examples like this one. When the component grows, it is more difficult to see how the `done` property depends on `ngOnChanges`. This approach can also be error-prone since we have to always remember to update the `done` property whenever we change the `todos`. I try to avoid this approach for derived state. That said, in cases where I have many inputs it can be a good option to orchestrate.
 
 - ✅ Simple and easy to understand
+- ✅ Good for multiple inputs
 - ⚠️ Can be error-prone with a more complex components
 
 ### Approach with a getter
@@ -177,6 +178,8 @@ Compared to the ngOnChanges, this approach has a few advantages. First, we see d
 This approach is very close to how we write formulas in a spreadsheet. One downside is, that every time the component is rerendered, the `done` property is recomputed. In this example, it is fine if the component is only rerendered when the `todos` array changes. This can be easily achieved by changing the change detection to `OnPush`.
 
 I like the readability of getters and use is often for components where I don't have any observables and only 1-2 inputs.
+
+What about perfomance? You might think that this approach is bad for performance because there is no caching. That's true, there is no caching. But in components with 1-2 inputs it is very likely that you anyway always have to update the derived property. Caching also adds some overhead and is not generally necessary for every computation.
 
 - ✅ Derived state is clearly defined
 - ✅ Getters is a fundamental language feature, no new concept to learn
@@ -296,7 +299,7 @@ export class TodoStatsComponent {
 }
 ```
 
-Bonus approach. I see this approach as a variant of the RxJS approach. If you often use the RxJS approach, using the `ngrx/component-store` library can be a nice addition. ComponentStore is a standalone library that helps to manage local/component state and comes with methods like. `setState` or `select`.
+Bonus approach. I see this approach as a variant of the RxJS approach. If you often use the RxJS approach, using the `ngrx/component-store` library can be a nice addition. ComponentStore is a standalone library that helps to manage local/component state and comes with methods like `setState` or `select`.
 
 You can start with a generic store like I do in this example. When you see the component gets too complex, it is easy to extract the store and define selectors in the store instead of in the component itself.
 
