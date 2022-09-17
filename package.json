@@ -1,20 +1,37 @@
 {
-  "private": true,
   "name": "site",
-  "version": "1.0.0",
-  "license": "MIT",
+  "version": "2.0.0",
+  "private": true,
+  "engines": {
+    "node": ">=14.0.0"
+  },
   "scripts": {
-    "build": "gatsby build",
-    "dev": "gatsby develop",
-    "clean": "gatsby clean"
+    "dev": "next dev",
+    "prebuild": "rsync -avm --include='*.jpg' --include='*.png' --include='*.svg' --include='*.pdf' -f 'hide,! */' ./posts/ ./public",
+    "build": "next build",
+    "export": "next export",
+    "test": "vitest run",
+    "test-watch": "vitest dev"
   },
   "dependencies": {
-    "@narative/gatsby-theme-novela": "^0.*",
-    "gatsby": "^2.13.41",
-    "gatsby-plugin-google-analytics": "^2.1.28",
-    "gatsby-plugin-manifest": "^2.2.4",
-    "gatsby-plugin-twitter": "^2.2.0",
-    "react": "^16.8.6",
-    "react-dom": "^16.8.6"
+    "gray-matter": "^4.0.3",
+    "next": "^12.0.1",
+    "react": "^17.0.2",
+    "react-dom": "^17.0.2",
+    "rehype-prism-plus": "^1.1.3",
+    "tiny-invariant": "^1.2.0",
+    "url-slug": "^3.0.2"
+  },
+  "devDependencies": {
+    "@babel/core": "^7.16.7",
+    "@netlify/plugin-nextjs": "^4.0.0-beta.12",
+    "@types/node": "^16.11.12",
+    "@types/react": "^17.0.37",
+    "autoprefixer": "^10.4.0",
+    "next-mdx-remote": "^3.0.8",
+    "postcss": "^8.4.4",
+    "tailwindcss": "^3.0.1",
+    "typescript": "^4.5.3",
+    "vitest": "0.0.139"
   }
 }
