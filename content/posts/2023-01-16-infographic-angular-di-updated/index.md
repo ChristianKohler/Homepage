@@ -15,11 +15,13 @@ tags: angular, dependency injection, infographic,
 
 Angular has its own dependency injection framework. It's very powerful and helps increase the efficiency and modularity of your application. It can also be quite complex when compared to traditional DI frameworks.
 
+I created a [infographic for Angular dependency injection](https://chriskohler.dev/angular-dependency-injection-infographic) a while ago. Now I updated the infographic with the latest features up to Angular 15.
+
 ## Updates with Angular 14
 
 With Angular 14 a new feature was released that allows us to inject providers using the `inject()` function instead of using the constructor class.
 
-How does that look like. Lets says we have the following service defined:
+So how can we use the new functionality? Lets says we have the following service defined:
 
 ```typescript
 @Injectable({
