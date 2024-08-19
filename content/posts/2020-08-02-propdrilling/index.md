@@ -253,7 +253,7 @@ Note that React's context and Angular's DI are fundamentally different in how th
 
 Angular comes with a hierarchical dependency injection system. I've [created a infographic poster](https://christiankohler.net/angular-dependency-injection-infographic) to visualise that system.
 
-What you need to know for know is that every component has its own injector and that child components can access the services from further up in the hierachy.
+What you need to know for now is that every component has its own injector and that child components can access the services from further up in the hierachy.
 
 ### Todo App with context-like state
 
